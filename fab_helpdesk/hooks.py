@@ -12,9 +12,16 @@ required_apps = ["helpdesk"]
 # create_desktop_icons_from_installed_apps() read app_details["logo"] without a
 # default, which raised KeyError and aborted desktop icon creation for the site.
 
+# the query parameter busts proxy caches (Cloudflare serves /assets with long
+# TTLs and frappe emits the tag without a version): bump it when the file changes
+web_include_js = "/assets/fab_helpdesk/js/login_language.js?v=2"
+
 doc_events = {
 	"User": {
-		"before_insert": "fab_helpdesk.onboarding.validate_signup_domain",
+		"before_insert": [
+			"fab_helpdesk.onboarding.validate_signup_domain",
+			"fab_helpdesk.onboarding.set_signup_language",
+		],
 	},
 	"Contact": {
 		"after_insert": "fab_helpdesk.onboarding.bind_contact_to_customer",

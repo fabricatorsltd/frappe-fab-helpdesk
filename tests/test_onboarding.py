@@ -60,6 +60,43 @@ class TestValidateSignupDomain(unittest.TestCase):
 			frappe.throw.assert_not_called()
 
 
+class TestSetSignupLanguage(unittest.TestCase):
+	def make_user(self, user_type="Website User"):
+		return SimpleNamespace(email="user@acme.com", user_type=user_type, language=None)
+
+	def test_sets_request_language_for_guest_signup(self):
+		with patch.object(onboarding, "frappe") as frappe:
+			frappe.session = SimpleNamespace(user="Guest")
+			frappe.local = SimpleNamespace(lang="de")
+			user = self.make_user()
+			onboarding.set_signup_language(user)
+			self.assertEqual(user.language, "de")
+
+	def test_skips_authenticated_sessions(self):
+		with patch.object(onboarding, "frappe") as frappe:
+			frappe.session = SimpleNamespace(user="agent@fabricators.ltd")
+			frappe.local = SimpleNamespace(lang="de")
+			user = self.make_user()
+			onboarding.set_signup_language(user)
+			self.assertIsNone(user.language)
+
+	def test_skips_system_users(self):
+		with patch.object(onboarding, "frappe") as frappe:
+			frappe.session = SimpleNamespace(user="Guest")
+			frappe.local = SimpleNamespace(lang="de")
+			user = self.make_user(user_type="System User")
+			onboarding.set_signup_language(user)
+			self.assertIsNone(user.language)
+
+	def test_keeps_language_unset_without_request_lang(self):
+		with patch.object(onboarding, "frappe") as frappe:
+			frappe.session = SimpleNamespace(user="Guest")
+			frappe.local = SimpleNamespace(lang=None)
+			user = self.make_user()
+			onboarding.set_signup_language(user)
+			self.assertIsNone(user.language)
+
+
 class TestBindContactToCustomer(unittest.TestCase):
 	def make_contact(self, email="user@acme.com", user="user@acme.com"):
 		contact = MagicMock()

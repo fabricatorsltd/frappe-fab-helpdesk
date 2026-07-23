@@ -40,6 +40,26 @@ def validate_signup_domain(doc, method=None):
 	)
 
 
+def set_signup_language(doc, method=None):
+	"""Persist the request language on self service signups.
+
+	Runs on User.before_insert, after the domain gate. Guests get their language
+	resolved by frappe from the _lang parameter, the preferred_language cookie or
+	the Accept-Language header, but neither sign_up nor the OAuth flow store it,
+	so the user would fall back to the site default. The portal then serves
+	translations from User.language, so this is what makes it speak the
+	customer's language.
+	"""
+	if doc.user_type != "Website User":
+		return
+	if getattr(frappe.session, "user", None) != "Guest":
+		return
+
+	lang = getattr(frappe.local, "lang", None)
+	if lang:
+		doc.language = lang
+
+
 def bind_contact_to_customer(doc, method=None):
 	"""Add a contact with a portal user to the HD Customer mapped to its domain.
 
