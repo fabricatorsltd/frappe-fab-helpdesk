@@ -97,6 +97,42 @@ class TestSetSignupLanguage(unittest.TestCase):
 			self.assertIsNone(user.language)
 
 
+class TestPersistLoginLanguage(unittest.TestCase):
+	def run_hook(self, cookie="it", user_type="Website User", current="en"):
+		with patch.object(onboarding, "frappe") as frappe:
+			frappe.request.cookies.get.return_value = cookie
+			frappe.db.exists.return_value = bool(cookie)
+			frappe.db.get_value.side_effect = lambda dt, name, field: {
+				"user_type": user_type,
+				"language": current,
+			}[field]
+			onboarding.persist_login_language(SimpleNamespace(user="user@acme.com"))
+			return frappe
+
+	def test_persists_picked_language(self):
+		frappe = self.run_hook()
+		frappe.db.set_value.assert_called_once_with("User", "user@acme.com", "language", "it")
+
+	def test_skips_without_cookie(self):
+		frappe = self.run_hook(cookie=None)
+		frappe.db.set_value.assert_not_called()
+
+	def test_skips_system_users(self):
+		frappe = self.run_hook(user_type="System User")
+		frappe.db.set_value.assert_not_called()
+
+	def test_skips_when_unchanged(self):
+		frappe = self.run_hook(current="it")
+		frappe.db.set_value.assert_not_called()
+
+	def test_skips_disabled_language(self):
+		with patch.object(onboarding, "frappe") as frappe:
+			frappe.request.cookies.get.return_value = "xx"
+			frappe.db.exists.return_value = None
+			onboarding.persist_login_language(SimpleNamespace(user="user@acme.com"))
+			frappe.db.set_value.assert_not_called()
+
+
 class TestBindContactToCustomer(unittest.TestCase):
 	def make_contact(self, email="user@acme.com", user="user@acme.com"):
 		contact = MagicMock()

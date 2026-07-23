@@ -60,6 +60,38 @@ def set_signup_language(doc, method=None):
 		doc.language = lang
 
 
+def persist_login_language(login_manager=None):
+	"""Store the language picked on the login page onto the user.
+
+	Without this the picker would only matter to guests and new signups: an
+	existing user choosing a language at login would still get the portal in
+	whatever User.language holds, since frappe ignores the cookie for logged in
+	sessions. This also doubles as the way portal users change their language,
+	because the customer portal exposes no profile settings.
+
+	Only explicit choices count: the cookie is written by the picker, never
+	from the Accept-Language header. Scoped to portal users so that agents on
+	the desk keep the language configured on their profile.
+	"""
+	user = getattr(login_manager, "user", None)
+	if not user:
+		return
+
+	cookie = frappe.request.cookies.get("preferred_language") if frappe.request else None
+	if not cookie:
+		return
+	if not frappe.db.exists("Language", {"name": cookie, "enabled": 1}):
+		return
+
+	if frappe.db.get_value("User", user, "user_type") != "Website User":
+		return
+	if frappe.db.get_value("User", user, "language") == cookie:
+		return
+
+	frappe.db.set_value("User", user, "language", cookie)
+	frappe.clear_cache(user=user)
+
+
 def bind_contact_to_customer(doc, method=None):
 	"""Add a contact with a portal user to the HD Customer mapped to its domain.
 

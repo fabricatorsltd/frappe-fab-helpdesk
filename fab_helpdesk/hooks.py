@@ -16,6 +16,8 @@ required_apps = ["helpdesk"]
 # TTLs and frappe emits the tag without a version): bump it when the file changes
 web_include_js = "/assets/fab_helpdesk/js/login_language.js?v=2"
 
+on_login = ["fab_helpdesk.onboarding.persist_login_language"]
+
 doc_events = {
 	"User": {
 		"before_insert": [
