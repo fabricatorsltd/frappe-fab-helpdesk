@@ -13,6 +13,16 @@ Customer onboarding and domain policies for Frappe Helpdesk.
 Rows without a customer allow signup without binding, which is meant for
 internal domains.
 
+## Language selection
+
+The login and signup pages get a language picker (served by
+`fab_helpdesk.api.get_languages`, so it only offers languages enabled on
+the site). The choice is stored on the User at signup, and a language
+picked on the login page is saved onto the User at login; sessions,
+portal, and email content then follow `User.language` as usual. Users
+created by agents keep whatever language the agent set until they pick
+one themselves.
+
 ## Security note on OAuth providers
 
 The gate and the binding trust the email asserted by the identity provider.
