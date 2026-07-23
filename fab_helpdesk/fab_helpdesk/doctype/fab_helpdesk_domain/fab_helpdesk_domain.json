@@ -1,0 +1,74 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "field:domain",
+ "creation": "2026-07-23 06:30:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "domain",
+  "customer"
+ ],
+ "fields": [
+  {
+   "description": "Email domain allowed to sign up on the support portal, without the @ sign.",
+   "fieldname": "domain",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Domain",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "description": "Contacts signing up with this domain are added to this customer. Leave empty for internal domains that only need portal access.",
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Customer",
+   "options": "HD Customer"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-07-23 06:30:00.000000",
+ "modified_by": "Administrator",
+ "module": "FAB Helpdesk",
+ "name": "FAB Helpdesk Domain",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Agent Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "read": 1,
+   "role": "Agent"
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}
