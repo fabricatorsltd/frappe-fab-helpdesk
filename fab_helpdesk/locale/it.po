@@ -1,0 +1,128 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: fab_helpdesk\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+# Helpdesk customer portal
+
+msgid "Tickets"
+msgstr "Ticket"
+
+msgid "Knowledge Base"
+msgstr "Base di conoscenza"
+
+msgid "List"
+msgstr "Elenco"
+
+msgid "Create"
+msgstr "Crea"
+
+msgid "New Ticket"
+msgstr "Nuovo ticket"
+
+msgid "Subject"
+msgstr "Oggetto"
+
+msgid "Status"
+msgstr "Stato"
+
+msgid "Priority"
+msgstr "Priorità"
+
+msgid "Resolution"
+msgstr "Risoluzione"
+
+msgid "Team"
+msgstr "Team"
+
+msgid "Columns"
+msgstr "Colonne"
+
+msgid "Toggle theme"
+msgstr "Cambia tema"
+
+msgid "Log out"
+msgstr "Esci"
+
+msgid "Open"
+msgstr "Aperto"
+
+msgid "Closed"
+msgstr "Chiuso"
+
+msgid "Resolved"
+msgstr "Risolto"
+
+msgid "Replied"
+msgstr "Risposto"
+
+msgid "Paused"
+msgstr "In pausa"
+
+msgid "Search"
+msgstr "Cerca"
+
+msgid "Reply"
+msgstr "Rispondi"
+
+msgid "Comment"
+msgstr "Commento"
+
+msgid "Description"
+msgstr "Descrizione"
+
+msgid "Settings"
+msgstr "Impostazioni"
+
+msgid "Assigned To"
+msgstr "Assegnato a"
+
+msgid "Filters"
+msgstr "Filtri"
+
+msgid "Sort"
+msgstr "Ordina"
+
+msgid "Refresh"
+msgstr "Aggiorna"
+
+msgid "Activity"
+msgstr "Attività"
+
+msgid "created"
+msgstr "creato"
+
+# Frappe login page
+
+msgid "Sign In"
+msgstr "Accedi"
+
+msgid "Welcome! Please sign in to continue."
+msgstr "Benvenuto! Accedi per continuare."
+
+msgid "Forgot password?"
+msgstr "Password dimenticata?"
+
+msgid "Forgot Password?"
+msgstr "Password dimenticata?"
+
+msgid "Email"
+msgstr "Email"
+
+msgid "Password"
+msgstr "Password"
+
+msgid "Continue"
+msgstr "Continua"
+
+msgid "Login with Email Link"
+msgstr "Accedi con link via email"
+
+msgid "Sign up"
+msgstr "Registrati"
+
+msgid "Sign Up"
+msgstr "Registrati"
