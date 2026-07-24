@@ -18,6 +18,9 @@ web_include_js = "/assets/fab_helpdesk/js/login_language.js?v=2"
 
 on_login = ["fab_helpdesk.onboarding.persist_login_language"]
 
+after_install = "fab_helpdesk.install.after_install"
+after_migrate = "fab_helpdesk.install.after_migrate"
+
 doc_events = {
 	"User": {
 		"before_insert": [
