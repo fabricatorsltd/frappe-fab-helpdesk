@@ -32,6 +32,14 @@ map the login email from the UPN or require the `xms_edov` (domain owner
 verified) claim. An unverified claim would let anyone reach another
 organization's tickets by asserting an email on its domain.
 
+## Related helpdesk fork change
+
+The `fabricatorsltd/helpdesk` fork (`version-1-fab`) adds an **HD Settings >
+Portal > Helpdesk URL** field: the public base URL used in notification email
+links, so a portal served on a dedicated domain (e.g. `help.example.com`) links
+there instead of the site URL. Empty keeps the previous behaviour. This lives in
+the helpdesk fork, not in `fab_helpdesk`.
+
 ## Installation
 
 ```bash
