@@ -89,14 +89,16 @@ def get_customer_sla_policies(customer=None):
 def get_login_config():
 	"""Login-page customisation for a helpdesk customer portal host.
 
-	`helpdesk_host` is the hostname of the customer portal; on it the login page
-	shows only the customer SSO button and hides the internal login. Both values
-	are per-instance site_config so the module ships unchanged to customer sites;
-	an unset `helpdesk_host` leaves the login page untouched.
+	On `helpdesk_host` the internal staff login buttons listed in
+	`helpdesk_internal_login_keys` (comma separated Social Login Key names,
+	default the internal Office 365 app) are hidden; the email/password form and
+	the customer SSO stay so customers without M365 can still sign in. Both are
+	per-instance site_config so the module ships unchanged to customer sites; an
+	unset `helpdesk_host` leaves the login page untouched.
 	"""
 	return {
 		"helpdesk_host": frappe.conf.get("helpdesk_host"),
-		"customer_login_key": frappe.conf.get("helpdesk_customer_login_key") or "m365_customer",
+		"internal_login_keys": frappe.conf.get("helpdesk_internal_login_keys") or "office_365",
 	}
 
 
