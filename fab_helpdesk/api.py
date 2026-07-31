@@ -67,6 +67,24 @@ def get_sla_policy(ticket_type, customer=None):
 	}
 
 
+@frappe.whitelist()
+def get_customer_sla_policies(customer=None):
+	"""Every distinct SLA policy that applies to the customer's SLA-bound
+	categories, for the read-only portal consultation page."""
+	customer = _resolve_customer(customer)
+	types = frappe.get_all(
+		"HD Ticket Type",
+		filters={"disabled": 0, "fab_customer_selectable": 1, "fab_sla_bound": 1},
+		pluck="name",
+	)
+	policies = {}
+	for ticket_type in types:
+		result = get_sla_policy(ticket_type, customer=customer)
+		if result.get("applies") and result["sla"] not in policies:
+			policies[result["sla"]] = result
+	return {"customer": customer, "policies": list(policies.values())}
+
+
 @frappe.whitelist(allow_guest=True)
 def get_languages():
 	"""Enabled languages for the login page picker.
