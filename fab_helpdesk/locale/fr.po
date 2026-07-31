@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: fab_helpdesk\n"
-"Language: it\n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -9,182 +9,182 @@ msgstr ""
 # Helpdesk customer portal
 
 msgid "Tickets"
-msgstr "Ticket"
+msgstr "Tickets"
 
 msgid "Knowledge Base"
-msgstr "Base di conoscenza"
+msgstr "Base de connaissances"
 
 msgid "List"
-msgstr "Elenco"
+msgstr "Liste"
 
 msgid "Create"
-msgstr "Crea"
+msgstr "Créer"
 
 msgid "New Ticket"
-msgstr "Nuovo ticket"
+msgstr "Nouveau ticket"
 
 msgid "Subject"
-msgstr "Oggetto"
+msgstr "Sujet"
 
 msgid "Status"
-msgstr "Stato"
+msgstr "Statut"
 
 msgid "Priority"
-msgstr "Priorità"
+msgstr "Priorité"
 
 msgid "Resolution"
-msgstr "Risoluzione"
+msgstr "Résolution"
 
 msgid "Team"
-msgstr "Team"
+msgstr "Équipe"
 
 msgid "Columns"
-msgstr "Colonne"
+msgstr "Colonnes"
 
 msgid "Toggle theme"
-msgstr "Cambia tema"
+msgstr "Changer le thème"
 
 msgid "Log out"
-msgstr "Esci"
+msgstr "Se déconnecter"
 
 msgid "Open"
-msgstr "Aperto"
+msgstr "Ouvert"
 
 msgid "Closed"
-msgstr "Chiuso"
+msgstr "Fermé"
 
 msgid "Resolved"
-msgstr "Risolto"
+msgstr "Résolu"
 
 msgid "Replied"
-msgstr "Risposto"
+msgstr "Répondu"
 
 msgid "Paused"
-msgstr "In pausa"
+msgstr "En pause"
 
 msgid "Search"
-msgstr "Cerca"
+msgstr "Rechercher"
 
 msgid "Reply"
-msgstr "Rispondi"
+msgstr "Répondre"
 
 msgid "Comment"
-msgstr "Commento"
+msgstr "Commentaire"
 
 msgid "Description"
-msgstr "Descrizione"
+msgstr "Description"
 
 msgid "Settings"
-msgstr "Impostazioni"
+msgstr "Paramètres"
 
 msgid "Assigned To"
-msgstr "Assegnato a"
+msgstr "Assigné à"
 
 msgid "Filters"
-msgstr "Filtri"
+msgstr "Filtres"
 
 msgid "Sort"
-msgstr "Ordina"
+msgstr "Trier"
 
 msgid "Refresh"
-msgstr "Aggiorna"
+msgstr "Actualiser"
 
 msgid "Activity"
-msgstr "Attività"
+msgstr "Activité"
 
 msgid "created"
-msgstr "creato"
+msgstr "créé"
 
 # Frappe login page
 
 msgid "Sign In"
-msgstr "Accedi"
+msgstr "Se connecter"
 
 msgid "Welcome! Please sign in to continue."
-msgstr "Benvenuto! Accedi per continuare."
+msgstr "Bienvenue ! Connectez-vous pour continuer."
 
 msgid "Forgot password?"
-msgstr "Password dimenticata?"
+msgstr "Mot de passe oublié ?"
 
 msgid "Forgot Password?"
-msgstr "Password dimenticata?"
+msgstr "Mot de passe oublié ?"
 
 msgid "Email"
-msgstr "Email"
+msgstr "E-mail"
 
 msgid "Password"
-msgstr "Password"
+msgstr "Mot de passe"
 
 msgid "Continue"
-msgstr "Continua"
+msgstr "Continuer"
 
 msgid "Login with Email Link"
-msgstr "Accedi con link via email"
+msgstr "Se connecter avec un lien e-mail"
 
 msgid "Sign up"
-msgstr "Registrati"
+msgstr "S'inscrire"
 
 msgid "Sign Up"
-msgstr "Registrati"
+msgstr "S'inscrire"
 
 # Ticket creation form
 
 msgid "A short description"
-msgstr "Breve descrizione"
+msgstr "Brève description"
 
 msgid "Please enter a subject to continue"
-msgstr "Inserisci un oggetto per continuare"
+msgstr "Saisissez un sujet pour continuer"
 
 msgid "Detailed explanation"
-msgstr "Spiegazione dettagliata"
+msgstr "Explication détaillée"
 
 msgid "Submit"
-msgstr "Invia"
+msgstr "Envoyer"
 
 # Ticket creation - SLA guidance
 
 msgid "Category"
-msgstr "Categoria"
+msgstr "Catégorie"
 
 msgid "Select a category"
-msgstr "Seleziona una categoria"
+msgstr "Sélectionnez une catégorie"
 
 msgid "Priority level"
-msgstr "Livello di priorità"
+msgstr "Niveau de priorité"
 
 msgid "Select the level"
-msgstr "Seleziona il livello"
+msgstr "Sélectionnez le niveau"
 
 msgid "No SLA applies to this category. It is planned within the ordinary development cycle."
-msgstr "Nessuno SLA si applica a questa categoria. È pianificata nel ciclo di sviluppo ordinario."
+msgstr "Aucun SLA ne s'applique à cette catégorie. Elle est planifiée dans le cycle de développement ordinaire."
 
 msgid "Please select a category"
-msgstr "Seleziona una categoria"
+msgstr "Sélectionnez une catégorie"
 
 msgid "Please select a priority level"
-msgstr "Seleziona un livello di priorità"
+msgstr "Sélectionnez un niveau de priorité"
 
 # Ticket categories
 
 msgid "Incident"
-msgstr "Incidente"
+msgstr "Incident"
 
 msgid "Request"
-msgstr "Richiesta"
+msgstr "Demande"
 
 msgid "Feature Request"
-msgstr "Nuova funzionalità"
+msgstr "Nouvelle fonctionnalité"
 
 # SLA priority levels
 
 msgid "Critical"
-msgstr "Critica"
+msgstr "Critique"
 
 msgid "High"
-msgstr "Alta"
+msgstr "Élevée"
 
 msgid "Medium"
-msgstr "Media"
+msgstr "Moyenne"
 
 msgid "Low"
-msgstr "Bassa"
+msgstr "Basse"
