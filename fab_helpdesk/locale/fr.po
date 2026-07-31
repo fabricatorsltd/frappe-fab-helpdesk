@@ -127,6 +127,11 @@ msgstr "S'inscrire"
 msgid "Sign Up"
 msgstr "S'inscrire"
 
+# Login page
+
+msgid "Login with {0}"
+msgstr "Se connecter avec {0}"
+
 # Ticket creation form
 
 msgid "A short description"

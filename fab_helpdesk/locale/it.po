@@ -127,6 +127,11 @@ msgstr "Registrati"
 msgid "Sign Up"
 msgstr "Registrati"
 
+# Login page
+
+msgid "Login with {0}"
+msgstr "Accedi con {0}"
+
 # Ticket creation form
 
 msgid "A short description"
