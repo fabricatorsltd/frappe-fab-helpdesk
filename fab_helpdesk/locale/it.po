@@ -141,6 +141,11 @@ msgstr "Spiegazione dettagliata"
 msgid "Submit"
 msgstr "Invia"
 
+# SLA consultation page
+
+msgid "No SLA policy is active for your account."
+msgstr "Nessuna policy SLA attiva per il tuo account."
+
 # Ticket creation - SLA guidance
 
 msgid "Category"
