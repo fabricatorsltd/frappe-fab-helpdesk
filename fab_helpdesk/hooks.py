@@ -14,7 +14,7 @@ required_apps = ["helpdesk"]
 
 # the query parameter busts proxy caches (Cloudflare serves /assets with long
 # TTLs and frappe emits the tag without a version): bump it when the file changes
-web_include_js = "/assets/fab_helpdesk/js/login_language.js?v=3"
+web_include_js = "/assets/fab_helpdesk/js/login_language.js?v=4"
 
 on_login = ["fab_helpdesk.onboarding.persist_login_language"]
 
