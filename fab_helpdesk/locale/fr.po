@@ -132,6 +132,15 @@ msgstr "S'inscrire"
 msgid "Login with {0}"
 msgstr "Se connecter avec {0}"
 
+msgid "Access not enabled"
+msgstr "Accès non activé"
+
+msgid "Your Microsoft account is not linked to an authorized organization. Please contact support to request access."
+msgstr "Votre compte Microsoft n'est pas lié à une organisation autorisée. Veuillez contacter le support pour demander l'accès."
+
+msgid "Back to login"
+msgstr "Retour à la connexion"
+
 # Ticket creation form
 
 msgid "A short description"
