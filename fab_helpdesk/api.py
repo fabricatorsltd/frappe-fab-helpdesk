@@ -86,6 +86,21 @@ def get_customer_sla_policies(customer=None):
 
 
 @frappe.whitelist(allow_guest=True)
+def get_login_config():
+	"""Login-page customisation for a helpdesk customer portal host.
+
+	`helpdesk_host` is the hostname of the customer portal; on it the login page
+	shows only the customer SSO button and hides the internal login. Both values
+	are per-instance site_config so the module ships unchanged to customer sites;
+	an unset `helpdesk_host` leaves the login page untouched.
+	"""
+	return {
+		"helpdesk_host": frappe.conf.get("helpdesk_host"),
+		"customer_login_key": frappe.conf.get("helpdesk_customer_login_key") or "m365_customer",
+	}
+
+
+@frappe.whitelist(allow_guest=True)
 def get_languages():
 	"""Enabled languages for the login page picker.
 
