@@ -174,8 +174,8 @@ msgstr "Livello di priorità"
 msgid "Select the level"
 msgstr "Seleziona il livello"
 
-msgid "No SLA applies to this category. It is planned within the ordinary development cycle."
-msgstr "Nessuno SLA si applica a questa categoria. È pianificata nel ciclo di sviluppo ordinario."
+msgid "No specific SLA applies to this category."
+msgstr "Per questa categoria non è previsto uno SLA specifico."
 
 msgid "Please select a category"
 msgstr "Seleziona una categoria"
