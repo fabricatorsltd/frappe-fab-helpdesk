@@ -12,7 +12,7 @@ msgid "Tickets"
 msgstr "Tickets"
 
 msgid "Knowledge Base"
-msgstr "Base de connaissances"
+msgstr "Documentation"
 
 msgid "List"
 msgstr "Liste"
@@ -210,3 +210,26 @@ msgstr "Moyenne"
 
 msgid "Low"
 msgstr "Basse"
+
+# Customer portal: ticket list + knowledge base
+
+msgid "Filter"
+msgstr "Filtre"
+
+msgid "No tickets found"
+msgstr "Aucun ticket trouvé"
+
+msgid "Create a new one using the Create button."
+msgstr "Créez-en un nouveau avec le bouton Créer."
+
+msgid "Ask a question..."
+msgstr "Posez une question..."
+
+msgid "Categories"
+msgstr "Catégories"
+
+msgid "No categories available"
+msgstr "Aucune catégorie disponible"
+
+msgid "There are no categories published at the moment."
+msgstr "Aucune catégorie n'est publiée pour le moment."
