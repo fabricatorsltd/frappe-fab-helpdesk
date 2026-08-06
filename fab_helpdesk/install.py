@@ -18,11 +18,41 @@ CUSTOMER_TICKET_TYPES = [("Incident", 1), ("Request", 0), ("Feature Request", 0)
 def after_install():
 	clear_portal_default_customer_role()
 	setup_sla_levels()
+	ensure_ticket_dev_fields()
 
 
 def after_migrate():
 	clear_portal_default_customer_role()
 	setup_sla_levels()
+	ensure_ticket_dev_fields()
+
+
+def ensure_ticket_dev_fields():
+	"""Agent-side dev-tracking fields on the ticket: the kind of dev task and its
+	id in the dev tracker. Inserted after a core field so it ships to any helpdesk
+	instance, and left out of the customer template so it never shows on the portal."""
+	from frappe.custom.doctype.custom_field.custom_field import create_custom_fields
+
+	create_custom_fields(
+		{
+			"HD Ticket": [
+				{
+					"fieldname": "fab_dev_task_type",
+					"fieldtype": "Select",
+					"label": "Dev Task Type",
+					"options": "\nBug\nFeature",
+					"insert_after": "agent_group",
+				},
+				{
+					"fieldname": "fab_dev_task_id",
+					"fieldtype": "Data",
+					"label": "Dev Task ID",
+					"insert_after": "fab_dev_task_type",
+				},
+			]
+		},
+		ignore_validate=True,
+	)
 
 
 def setup_sla_levels():
