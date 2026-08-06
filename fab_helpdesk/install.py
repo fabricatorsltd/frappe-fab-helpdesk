@@ -27,10 +27,18 @@ def after_migrate():
 	ensure_ticket_dev_fields()
 
 
+DEV_FIELDS = ("fab_dev_task_type", "fab_dev_task_id")
+# permlevel 1: staff (Agent) writes, the customer only reads
+DEV_PERMLEVEL = 1
+DEV_WRITE_ROLES = ("Agent", "Agent Manager", "System Manager")
+DEV_READ_ROLES = ("HD Customer", "HD Customer Manager")
+
+
 def ensure_ticket_dev_fields():
-	"""Agent-side dev-tracking fields on the ticket: the kind of dev task and its
-	id in the dev tracker. Inserted after a core field so it ships to any helpdesk
-	instance, and left out of the customer template so it never shows on the portal."""
+	"""Dev-tracking fields on the ticket: the kind of dev task and its id in the
+	dev tracker. Staff fill them, the customer can only view them: they sit at
+	permlevel 1 (staff write, customer read) and are shown read-only on the portal
+	ticket via the customer template."""
 	from frappe.custom.doctype.custom_field.custom_field import create_custom_fields
 
 	create_custom_fields(
@@ -42,17 +50,53 @@ def ensure_ticket_dev_fields():
 					"label": "Dev Task Type",
 					"options": "\nBug\nFeature",
 					"insert_after": "agent_group",
+					"permlevel": DEV_PERMLEVEL,
 				},
 				{
 					"fieldname": "fab_dev_task_id",
 					"fieldtype": "Data",
 					"label": "Dev Task ID",
 					"insert_after": "fab_dev_task_type",
+					"permlevel": DEV_PERMLEVEL,
 				},
 			]
 		},
 		ignore_validate=True,
 	)
+	ensure_ticket_dev_permlevel_perms()
+	ensure_ticket_dev_template_fields()
+
+
+def ensure_ticket_dev_permlevel_perms():
+	"""Grant the permlevel-1 permissions the dev fields rely on: staff read+write,
+	customer read-only."""
+	from frappe.permissions import add_permission, update_permission_property
+
+	for role in DEV_WRITE_ROLES:
+		add_permission("HD Ticket", role, DEV_PERMLEVEL)
+		update_permission_property("HD Ticket", role, DEV_PERMLEVEL, "read", 1)
+		update_permission_property("HD Ticket", role, DEV_PERMLEVEL, "write", 1)
+	for role in DEV_READ_ROLES:
+		add_permission("HD Ticket", role, DEV_PERMLEVEL)
+		update_permission_property("HD Ticket", role, DEV_PERMLEVEL, "read", 1)
+		update_permission_property("HD Ticket", role, DEV_PERMLEVEL, "write", 0)
+
+
+def ensure_ticket_dev_template_fields():
+	"""Show the dev fields on the customer portal ticket (read-only there) by
+	adding them to the Default ticket template, visible to the customer."""
+	if not frappe.db.exists("HD Ticket Template", "Default"):
+		return
+	template = frappe.get_doc("HD Ticket Template", "Default")
+	existing = {row.fieldname for row in template.fields}
+	changed = False
+	for fieldname in DEV_FIELDS:
+		if fieldname not in existing:
+			template.append("fields", {"fieldname": fieldname, "hide_from_customer": 0})
+			changed = True
+	if changed:
+		template.flags.ignore_permissions = True
+		template.save()
 
 
 def setup_sla_levels():
