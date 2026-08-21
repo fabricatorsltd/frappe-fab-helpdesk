@@ -59,12 +59,25 @@
 		});
 })();
 
-// On the configured helpdesk customer host, hide only the internal staff login
-// button(s): the email/password form and the customer SSO stay so customers
-// without M365 can still sign in. Host and the internal keys to hide are read
-// from site_config so the module ships unchanged to customer instances.
+// Split the SSO buttons by host, both sides symmetric and driven by site_config
+// so the module ships unchanged to customer instances:
+//   - on the helpdesk customer host: hide the internal staff button(s), keeping
+//     email/password + the customer SSO so customers without M365 can sign in;
+//   - on any other host (the aziendale desk): hide the customer SSO button(s),
+//     keeping email/password + the internal staff SSO.
+// Only splits when helpdesk_host is set; otherwise the page stays as rendered.
 (function () {
 	if (window.location.pathname !== "/login") return;
+
+	function hide(keys, fallback) {
+		(keys || fallback).split(",").forEach(function (key) {
+			key = key.trim();
+			if (!key) return;
+			document.querySelectorAll(".btn-login-option.btn-" + key).forEach(function (el) {
+				el.style.display = "none";
+			});
+		});
+	}
 
 	fetch("/api/method/fab_helpdesk.api.get_login_config")
 		.then(function (response) {
@@ -72,15 +85,12 @@
 		})
 		.then(function (payload) {
 			var cfg = (payload && payload.message) || {};
-			if (!cfg.helpdesk_host || window.location.hostname !== cfg.helpdesk_host) return;
-
-			(cfg.internal_login_keys || "office_365").split(",").forEach(function (key) {
-				key = key.trim();
-				if (!key) return;
-				document.querySelectorAll(".btn-login-option.btn-" + key).forEach(function (el) {
-					el.style.display = "none";
-				});
-			});
+			if (!cfg.helpdesk_host) return;
+			if (window.location.hostname === cfg.helpdesk_host) {
+				hide(cfg.internal_login_keys, "office_365");
+			} else {
+				hide(cfg.customer_login_keys, "m365_customer");
+			}
 		})
 		.catch(function () {
 			// no config, no change: the login page stays as frappe rendered it

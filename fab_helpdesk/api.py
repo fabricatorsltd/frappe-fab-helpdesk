@@ -99,6 +99,7 @@ def get_login_config():
 	return {
 		"helpdesk_host": frappe.conf.get("helpdesk_host"),
 		"internal_login_keys": frappe.conf.get("helpdesk_internal_login_keys") or "office_365",
+		"customer_login_keys": frappe.conf.get("helpdesk_customer_login_keys") or "m365_customer",
 	}
 
 
