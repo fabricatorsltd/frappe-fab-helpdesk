@@ -11,6 +11,14 @@ def get_email_domain(email: str | None) -> str | None:
 	return email.rsplit("@", 1)[1]
 
 
+def get_internal_domains() -> set[str]:
+	"""Staff domains exempt from the customer signup gate (site_config
+	`helpdesk_internal_domains`, comma separated). These are our own people
+	logging in with the aziendale M365 app, not customers self-registering."""
+	raw = frappe.conf.get("helpdesk_internal_domains") or ""
+	return {d.strip().lower() for d in raw.split(",") if d.strip()}
+
+
 def validate_signup_domain(doc, method=None):
 	"""Reject self service signups from domains outside the allowlist.
 
@@ -32,6 +40,9 @@ def validate_signup_domain(doc, method=None):
 
 	domain = get_email_domain(doc.email)
 	if domain and frappe.db.exists(DOMAIN_DOCTYPE, {"domain": domain}):
+		return
+	if domain and domain in get_internal_domains():
+		# internal staff signing in with the aziendale app, not a customer
 		return
 
 	frappe.throw(
