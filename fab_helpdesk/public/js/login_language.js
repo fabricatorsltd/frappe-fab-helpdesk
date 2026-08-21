@@ -79,12 +79,16 @@
 		});
 	}
 
-	fetch("/api/method/fab_helpdesk.api.get_login_config")
+	fetch("/api/method/fab_helpdesk.api.get_login_config", {
+		headers: { "X-Frappe-Site-Name": window.location.hostname },
+	})
 		.then(function (response) {
 			return response.json();
 		})
 		.then(function (payload) {
 			var cfg = (payload && payload.message) || {};
+			// helpdesk_host must be a bare lowercase host (no scheme/port) to match
+			// window.location.hostname; otherwise this host counts as the desk.
 			if (!cfg.helpdesk_host) return;
 			if (window.location.hostname === cfg.helpdesk_host) {
 				hide(cfg.internal_login_keys, "office_365");

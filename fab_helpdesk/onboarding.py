@@ -14,7 +14,11 @@ def get_email_domain(email: str | None) -> str | None:
 def get_internal_domains() -> set[str]:
 	"""Staff domains exempt from the customer signup gate (site_config
 	`helpdesk_internal_domains`, comma separated). These are our own people
-	logging in with the aziendale M365 app, not customers self-registering."""
+	logging in with the aziendale M365 app, not customers self-registering.
+
+	Like the customer allowlist, this trusts the domain, not mailbox ownership;
+	keep website `disable_signup` on so only verified OAuth (not the open sign_up
+	form) can reach the exemption."""
 	raw = frappe.conf.get("helpdesk_internal_domains") or ""
 	return {d.strip().lower() for d in raw.split(",") if d.strip()}
 
