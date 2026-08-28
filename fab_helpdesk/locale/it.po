@@ -253,3 +253,35 @@ msgstr "clicca qui"
 
 msgid "If you did not submit this request, you can safely ignore this message."
 msgstr "Se non hai inviato tu questa richiesta, puoi ignorare questo messaggio."
+
+# New ticket notification to agents
+
+msgid "[New request] #{0}: {1}"
+msgstr "[Nuova richiesta] #{0}: {1}"
+
+msgid "A new support request has arrived by email."
+msgstr "È arrivata una nuova richiesta di supporto via email."
+
+msgid "From"
+msgstr "Da"
+
+msgid "Customer"
+msgstr "Cliente"
+
+msgid "Not associated"
+msgstr "Non associato"
+
+msgid "Contract"
+msgstr "Contratto"
+
+msgid "Response due"
+msgstr "Risposta entro"
+
+msgid "Resolution due"
+msgstr "Risoluzione entro"
+
+msgid "Message"
+msgstr "Messaggio"
+
+msgid "Open the ticket"
+msgstr "Apri il ticket"
