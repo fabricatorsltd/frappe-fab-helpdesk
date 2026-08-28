@@ -254,6 +254,9 @@ msgstr "clicca qui"
 msgid "If you did not submit this request, you can safely ignore this message."
 msgstr "Se non hai inviato tu questa richiesta, puoi ignorare questo messaggio."
 
+msgid "Reply above this line"
+msgstr "Rispondi sopra questa riga"
+
 # New ticket notification to agents
 
 msgid "[New request] #{0}: {1}"
