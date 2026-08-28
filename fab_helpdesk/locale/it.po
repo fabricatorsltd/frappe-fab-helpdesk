@@ -233,3 +233,23 @@ msgstr "Nessuna categoria disponibile"
 
 msgid "There are no categories published at the moment."
 msgstr "Al momento non ci sono categorie pubblicate."
+
+# Ticket acknowledgement email
+
+msgid "[Request received] {0}"
+msgstr "[Richiesta ricevuta] {0}"
+
+msgid "Thank you for contacting us. We have received your request and opened a support ticket. Our team will get back to you shortly."
+msgstr "Grazie per averci contattato. Abbiamo ricevuto la tua richiesta e aperto un ticket di supporto. Il nostro team ti risponderà a breve."
+
+msgid "Request no."
+msgstr "Richiesta n."
+
+msgid "You can add a comment to your request by replying to this email. To view or update it,"
+msgstr "Puoi aggiungere un commento alla richiesta rispondendo a questa email. Per vederla o aggiornarla,"
+
+msgid "click here"
+msgstr "clicca qui"
+
+msgid "If you did not submit this request, you can safely ignore this message."
+msgstr "Se non hai inviato tu questa richiesta, puoi ignorare questo messaggio."
