@@ -19,12 +19,36 @@ def after_install():
 	clear_portal_default_customer_role()
 	setup_sla_levels()
 	ensure_ticket_dev_fields()
+	ensure_cc_field()
 
 
 def after_migrate():
 	clear_portal_default_customer_role()
 	setup_sla_levels()
 	ensure_ticket_dev_fields()
+	ensure_cc_field()
+
+
+def ensure_cc_field():
+	"""CC participants on the ticket: an email loop and a visibility grant.
+	Captured from inbound mail and managed by agents from the sidebar; a CC'd
+	contact may view the ticket (see hd_ticket has_permission)."""
+	from frappe.custom.doctype.custom_field.custom_field import create_custom_fields
+
+	create_custom_fields(
+		{
+			"HD Ticket": [
+				{
+					"fieldname": "fab_cc",
+					"fieldtype": "Small Text",
+					"label": "CC",
+					"insert_after": "raised_by",
+					"no_copy": 1,
+				}
+			]
+		},
+		ignore_validate=True,
+	)
 
 
 DEV_FIELDS = ("fab_dev_task_type", "fab_dev_task_id")
