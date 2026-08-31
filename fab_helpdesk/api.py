@@ -37,34 +37,47 @@ def get_ticket_options(customer=None):
 
 
 @frappe.whitelist()
+def _priority_level_options(priority_codes):
+	levels = []
+	for code in priority_codes:
+		severity = frappe.db.get_value("HD Ticket Priority", code, "description") or code
+		levels.append({"value": code, "label": f"{code} - {_(severity)}"})
+	return levels
+
+
 def get_sla_policy(ticket_type, customer=None):
-	"""SLA policy (customer-authored rich text + level dropdown) that applies to a
-	ticket of this type for this customer. Level labels are translated; the policy
-	body is the contract text and is returned verbatim."""
+	"""Priority levels for the ticket form, plus the SLA policy when one applies.
+
+	The priority picker is always offered (every ticket is triaged by priority).
+	A contractual SLA only applies to SLA-bound ticket types (Incident); other
+	types are handled best-effort during office hours, still honouring the chosen
+	priority. Level labels are translated; the policy body is returned verbatim.
+	"""
 	from helpdesk.helpdesk.doctype.hd_service_level_agreement.utils import get_sla
 
 	customer = _resolve_customer(customer)
+	sla_bound = bool(frappe.db.get_value("HD Ticket Type", ticket_type, "fab_sla_bound"))
+
 	probe = frappe.new_doc("HD Ticket")
 	probe.subject = "_"
 	probe.customer = customer
 	probe.ticket_type = ticket_type
 	probe.priority = frappe.db.get_single_value("HD Settings", "default_priority") or "P3"
+	sla = get_sla(probe) if sla_bound else None
 
-	sla = get_sla(probe)
-	if not sla or sla.default_sla:
-		return {"applies": False}
+	if sla_bound and sla and not sla.default_sla:
+		doc = frappe.get_doc("HD Service Level Agreement", sla.name)
+		codes = [row.priority for row in sorted(doc.priorities, key=lambda r: r.idx)]
+		return {
+			"applies": True,
+			"best_effort": False,
+			"sla": doc.name,
+			"policy_html": doc.get("fab_policy_html") or "",
+			"levels": _priority_level_options(codes),
+		}
 
-	doc = frappe.get_doc("HD Service Level Agreement", sla.name)
-	levels = []
-	for row in sorted(doc.priorities, key=lambda r: r.idx):
-		severity = frappe.db.get_value("HD Ticket Priority", row.priority, "description") or row.priority
-		levels.append({"value": row.priority, "label": f"{row.priority} - {_(severity)}"})
-	return {
-		"applies": True,
-		"sla": doc.name,
-		"policy_html": doc.get("fab_policy_html") or "",
-		"levels": levels,
-	}
+	codes = frappe.get_all("HD Ticket Priority", order_by="name", pluck="name")
+	return {"applies": False, "best_effort": True, "levels": _priority_level_options(codes)}
 
 
 @frappe.whitelist()

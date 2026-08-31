@@ -257,6 +257,9 @@ msgstr "Se non hai inviato tu questa richiesta, puoi ignorare questo messaggio."
 msgid "Reply above this line"
 msgstr "Rispondi sopra questa riga"
 
+msgid "For this category we handle requests on a best-effort basis during office hours, taking the selected priority into account."
+msgstr "Per questa categoria gestiamo le richieste in modalità best-effort durante l'orario d'ufficio, tenendo conto della priorità selezionata."
+
 # User invitation email
 
 msgid "{0} on {1}"
