@@ -36,7 +36,6 @@ def get_ticket_options(customer=None):
 	}
 
 
-@frappe.whitelist()
 def _priority_level_options(priority_codes):
 	levels = []
 	for code in priority_codes:
@@ -45,6 +44,7 @@ def _priority_level_options(priority_codes):
 	return levels
 
 
+@frappe.whitelist()
 def get_sla_policy(ticket_type, customer=None):
 	"""Priority levels for the ticket form, plus the SLA policy when one applies.
 
