@@ -257,6 +257,23 @@ msgstr "Se non hai inviato tu questa richiesta, puoi ignorare questo messaggio."
 msgid "Reply above this line"
 msgstr "Rispondi sopra questa riga"
 
+# User invitation email
+
+msgid "{0} on {1}"
+msgstr "{0} su {1}"
+
+msgid "You've been invited to join {0}"
+msgstr "Sei stato invitato a unirti a {0}"
+
+msgid "You've been invited to join {0}."
+msgstr "Sei stato invitato a unirti a {0}."
+
+msgid "Click below to get started:"
+msgstr "Clicca qui sotto per iniziare:"
+
+msgid "If you have any questions, reach out to your system administrator."
+msgstr "Per qualsiasi domanda, contatta l'amministratore di sistema."
+
 # New ticket notification to agents
 
 msgid "[New request] #{0}: {1}"
