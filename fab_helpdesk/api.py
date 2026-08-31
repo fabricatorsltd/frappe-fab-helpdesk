@@ -130,3 +130,45 @@ def get_languages():
 		fields=["name", "language_name"],
 		order_by="language_name",
 	)
+
+
+@frappe.whitelist()
+def get_cc_candidates(ticket):
+	"""Contacts of the ticket's customer, offered to agents for the CC picker.
+
+	Pre-filtered to the linked customer so an agent searches that customer's
+	people instead of typing arbitrary emails. Excludes whoever is already on
+	the ticket (current CC and the requester)."""
+	from email.utils import getaddresses
+
+	from helpdesk.utils import is_agent
+
+	if not is_agent():
+		frappe.throw(_("You are not permitted to manage CC"), frappe.PermissionError)
+
+	tk = frappe.db.get_value(
+		"HD Ticket", ticket, ["customer", "raised_by", "fab_cc"], as_dict=True
+	)
+	if not tk or not tk.customer:
+		return []
+
+	exclude = {addr.lower() for _n, addr in getaddresses([tk.fab_cc or ""]) if addr}
+	if tk.raised_by:
+		exclude.add(tk.raised_by.lower())
+
+	members = frappe.get_all(
+		"HD Customer Member",
+		filters={"parenttype": "HD Customer", "parent": tk.customer},
+		pluck="contact_name",
+	)
+	out = []
+	for contact_name in members:
+		c = frappe.db.get_value(
+			"Contact", contact_name, ["first_name", "last_name", "email_id"], as_dict=True
+		)
+		email = (c and c.email_id or "").lower()
+		if not email or email in exclude:
+			continue
+		label = " ".join(x for x in [c.first_name, c.last_name] if x) or contact_name
+		out.append({"label": f"{label} <{email}>", "value": email})
+	return out

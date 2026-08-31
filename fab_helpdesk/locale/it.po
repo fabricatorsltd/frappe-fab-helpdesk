@@ -263,6 +263,9 @@ msgstr "CC"
 msgid "Add email..."
 msgstr "Aggiungi email..."
 
+msgid "Add a contact..."
+msgstr "Aggiungi un contatto..."
+
 msgid "For this category we handle requests on a best-effort basis during office hours, taking the selected priority into account."
 msgstr "Per questa categoria gestiamo le richieste in modalità best-effort durante l'orario d'ufficio, tenendo conto della priorità selezionata."
 
