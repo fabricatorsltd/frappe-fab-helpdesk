@@ -21,6 +21,16 @@ on_login = ["fab_helpdesk.onboarding.persist_login_language"]
 after_install = "fab_helpdesk.install.after_install"
 after_migrate = "fab_helpdesk.install.after_migrate"
 
+# Knowledge base audience: restricted articles are visible only to their listed
+# customers. Applies to every list query; single-article reads are gated in the
+# KB API (see fab_helpdesk.kb).
+permission_query_conditions = {
+	"HD Article": "fab_helpdesk.kb.article_permission_query",
+}
+has_permission = {
+	"HD Article": "fab_helpdesk.kb.has_article_permission",
+}
+
 doc_events = {
 	"User": {
 		"before_insert": [

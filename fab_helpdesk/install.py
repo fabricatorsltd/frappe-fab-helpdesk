@@ -22,6 +22,7 @@ def after_install():
 	setup_sla_levels()
 	ensure_ticket_dev_fields()
 	ensure_cc_field()
+	ensure_kb_article_fields()
 	backfill_customer_landing_app()
 
 
@@ -30,7 +31,54 @@ def after_migrate():
 	setup_sla_levels()
 	ensure_ticket_dev_fields()
 	ensure_cc_field()
+	ensure_kb_article_fields()
 	backfill_customer_landing_app()
+
+
+def ensure_kb_article_fields():
+	"""Audience and language on knowledge base articles. Restricted articles are
+	visible only to the listed customers (see hd_article permission hooks); the
+	language drives the customer portal's per-language KB filter."""
+	from frappe.custom.doctype.custom_field.custom_field import create_custom_fields
+
+	create_custom_fields(
+		{
+			"HD Article": [
+				{
+					"fieldname": "fab_audience_section",
+					"fieldtype": "Section Break",
+					"label": "Audience",
+					"insert_after": "views",
+				},
+				{
+					"fieldname": "fab_visibility",
+					"fieldtype": "Select",
+					"label": "Visibility",
+					"options": "Public\nRestricted",
+					"default": "Public",
+					"insert_after": "fab_audience_section",
+					"description": "Public: visible to every customer. Restricted: only the customers listed below.",
+				},
+				{
+					"fieldname": "fab_customers",
+					"fieldtype": "Table MultiSelect",
+					"label": "Visible to customers",
+					"options": "FAB HD Article Customer",
+					"insert_after": "fab_visibility",
+					"depends_on": "eval:doc.fab_visibility=='Restricted'",
+				},
+				{
+					"fieldname": "fab_language",
+					"fieldtype": "Link",
+					"label": "Language",
+					"options": "Language",
+					"insert_after": "fab_customers",
+					"description": "Language of this article. Drives the per-language filter in the customer portal.",
+				},
+			]
+		},
+		ignore_validate=True,
+	)
 
 
 def ensure_cc_field():
