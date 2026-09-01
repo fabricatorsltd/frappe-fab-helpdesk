@@ -356,3 +356,37 @@ msgstr "Introduzca su correo electrónico y le enviaremos un enlace para restabl
 
 msgid "Send Link"
 msgstr "Enviar enlace"
+
+msgid "If this email is registered with us, we have sent password reset instructions to it. Please check your inbox."
+msgstr "Si este correo está registrado, le hemos enviado las instrucciones para restablecer la contraseña. Revise su bandeja de entrada."
+
+# Knowledge base search
+
+msgid "No answers found"
+msgstr "No se encontraron respuestas"
+
+msgid "Rephrase the question and try again with some keywords"
+msgstr "Reformule la pregunta e intente de nuevo con algunas palabras clave"
+
+# Customer ticket sidebar
+
+msgid "Ticket details"
+msgstr "Detalles del ticket"
+
+msgid "Ticket ID"
+msgstr "ID del ticket"
+
+msgid "First Response"
+msgstr "Primera respuesta"
+
+msgid "Due in {0}"
+msgstr "Vence en {0}"
+
+msgid "Fulfilled in {0}"
+msgstr "Cumplido en {0}"
+
+msgid "Dev Task Type"
+msgstr "Tipo de tarea dev"
+
+msgid "Dev Task ID"
+msgstr "ID de tarea dev"

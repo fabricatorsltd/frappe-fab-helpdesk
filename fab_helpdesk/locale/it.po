@@ -356,3 +356,43 @@ msgstr "Inserisci la tua email, ti invieremo il link per reimpostare la password
 
 msgid "Send Link"
 msgstr "Invia il link"
+
+msgid "Verifying..."
+msgstr "Verifica in corso..."
+
+msgid "Password Reset"
+msgstr "Reimposta la password"
+
+msgid "If this email is registered with us, we have sent password reset instructions to it. Please check your inbox."
+msgstr "Se questa email è registrata, ti abbiamo inviato le istruzioni per reimpostare la password. Controlla la tua casella di posta."
+
+# Knowledge base search
+
+msgid "No answers found"
+msgstr "Nessuna risposta trovata"
+
+msgid "Rephrase the question and try again with some keywords"
+msgstr "Riformula la domanda e riprova con alcune parole chiave"
+
+# Customer ticket sidebar
+
+msgid "Ticket details"
+msgstr "Dettagli ticket"
+
+msgid "Ticket ID"
+msgstr "ID ticket"
+
+msgid "First Response"
+msgstr "Prima risposta"
+
+msgid "Due in {0}"
+msgstr "Scade tra {0}"
+
+msgid "Fulfilled in {0}"
+msgstr "Rispettato in {0}"
+
+msgid "Dev Task Type"
+msgstr "Tipo attività dev"
+
+msgid "Dev Task ID"
+msgstr "ID attività dev"

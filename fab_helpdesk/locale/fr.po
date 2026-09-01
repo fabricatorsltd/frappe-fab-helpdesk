@@ -356,3 +356,40 @@ msgstr "Saisissez votre e-mail, nous vous enverrons un lien de réinitialisation
 
 msgid "Send Link"
 msgstr "Envoyer le lien"
+
+msgid "Verifying..."
+msgstr "Vérification..."
+
+msgid "If this email is registered with us, we have sent password reset instructions to it. Please check your inbox."
+msgstr "Si cette adresse e-mail est enregistrée chez nous, nous vous avons envoyé les instructions de réinitialisation du mot de passe. Consultez votre boîte de réception."
+
+# Knowledge base search
+
+msgid "No answers found"
+msgstr "Aucune réponse trouvée"
+
+msgid "Rephrase the question and try again with some keywords"
+msgstr "Reformulez la question et réessayez avec quelques mots-clés"
+
+# Customer ticket sidebar
+
+msgid "Ticket details"
+msgstr "Détails du ticket"
+
+msgid "Ticket ID"
+msgstr "ID du ticket"
+
+msgid "First Response"
+msgstr "Première réponse"
+
+msgid "Due in {0}"
+msgstr "Échéance dans {0}"
+
+msgid "Fulfilled in {0}"
+msgstr "Respecté en {0}"
+
+msgid "Dev Task Type"
+msgstr "Type de tâche dev"
+
+msgid "Dev Task ID"
+msgstr "ID de tâche dev"
