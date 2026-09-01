@@ -2,6 +2,8 @@ from __future__ import annotations
 
 import frappe
 
+from fab_helpdesk.onboarding import backfill_customer_landing_app
+
 # Urgent/High/Medium/Low -> P1..P4, English-canonical severity (the source language;
 # it/fr come from the .po catalog). integer_value is preserved by the rename.
 PRIORITY_RENAME = [
@@ -20,6 +22,7 @@ def after_install():
 	setup_sla_levels()
 	ensure_ticket_dev_fields()
 	ensure_cc_field()
+	backfill_customer_landing_app()
 
 
 def after_migrate():
@@ -27,6 +30,7 @@ def after_migrate():
 	setup_sla_levels()
 	ensure_ticket_dev_fields()
 	ensure_cc_field()
+	backfill_customer_landing_app()
 
 
 def ensure_cc_field():

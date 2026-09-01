@@ -3,6 +3,48 @@ from frappe import _
 
 DOMAIN_DOCTYPE = "FAB Helpdesk Domain"
 
+# Land helpdesk customers on the portal after login/password-reset. The site's
+# system default_app is erpnext (routes to /app, "Not Permitted" for a Website
+# User), so without a per-user default_app get_default_path() sends customers to
+# the desk. Setting User.default_app pins get_route("helpdesk") = /helpdesk.
+CUSTOMER_DEFAULT_APP = "helpdesk"
+
+
+def set_customer_landing_app(user: str | None):
+	"""Pin a customer user's post-login landing to the helpdesk portal.
+
+	Idempotent, permission-agnostic (runs inside installer/onboarding jobs).
+	Only touches Website Users so an internal person who also holds a customer
+	contact is never pushed off the desk."""
+	if not user or user in ("Administrator", "Guest"):
+		return
+	utype, current = frappe.db.get_value("User", user, ["user_type", "default_app"]) or (
+		None,
+		None,
+	)
+	if utype != "Website User" or current == CUSTOMER_DEFAULT_APP:
+		return
+	frappe.db.set_value("User", user, "default_app", CUSTOMER_DEFAULT_APP)
+
+
+def backfill_customer_landing_app():
+	"""Pin the helpdesk landing on customers bound before this hook existed.
+
+	Source of truth is HD Customer membership, not a role: domain-bound OAuth
+	signups are not granted HD Customer, so a role scan would miss them."""
+	users = frappe.get_all(
+		"HD Customer Member",
+		filters={"contact_name": ["is", "set"]},
+		pluck="contact_name",
+		distinct=True,
+	)
+	seen = set()
+	for contact_name in users:
+		user = frappe.db.get_value("Contact", contact_name, "user")
+		if user and user not in seen:
+			seen.add(user)
+			set_customer_landing_app(user)
+
 
 def get_email_domain(email: str | None) -> str | None:
 	email = (email or "").strip().lower()
@@ -168,6 +210,7 @@ def add_membership(customer_name: str, contact_name: str):
 	customer can be saved by an agent between load and save. A stale save would
 	roll back the whole job, taking the freshly inserted contact with it.
 	"""
+	set_customer_landing_app(frappe.db.get_value("Contact", contact_name, "user"))
 	for attempt in range(2):
 		customer = frappe.get_doc("HD Customer", customer_name)
 		if not customer.add_contact(contact_name):
