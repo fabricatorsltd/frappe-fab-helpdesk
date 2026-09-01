@@ -393,3 +393,32 @@ msgstr "Type de tâche dev"
 
 msgid "Dev Task ID"
 msgstr "ID de tâche dev"
+
+# KB article editor (audience) + create-form suggestions
+
+msgid "Visibility"
+msgstr "Visibilité"
+
+msgid "Public"
+msgstr "Public"
+
+msgid "Restricted"
+msgstr "Restreint"
+
+msgid "Visible to customers"
+msgstr "Visible par les clients"
+
+msgid "Add a customer..."
+msgstr "Ajouter un client..."
+
+msgid "Not set"
+msgstr "Non défini"
+
+msgid "These articles may already cover what you are looking for"
+msgstr "Ces articles couvrent peut-être déjà ce que vous cherchez"
+
+msgid "Searching..."
+msgstr "Recherche..."
+
+msgid "Please wait while we search for the answers"
+msgstr "Veuillez patienter pendant que nous cherchons les réponses"

@@ -23,6 +23,7 @@ def after_install():
 	ensure_ticket_dev_fields()
 	ensure_cc_field()
 	ensure_kb_article_fields()
+	ensure_customer_ticket_visibility_field()
 	backfill_customer_landing_app()
 
 
@@ -32,7 +33,32 @@ def after_migrate():
 	ensure_ticket_dev_fields()
 	ensure_cc_field()
 	ensure_kb_article_fields()
+	ensure_customer_ticket_visibility_field()
 	backfill_customer_landing_app()
+
+
+def ensure_customer_ticket_visibility_field():
+	"""How much of a customer's tickets its members see. Standard keeps today's
+	behaviour (own tickets, managers see all); Company-wide lets every member see
+	all the customer's tickets. Enforced in hd_ticket permission_query."""
+	from frappe.custom.doctype.custom_field.custom_field import create_custom_fields
+
+	create_custom_fields(
+		{
+			"HD Customer": [
+				{
+					"fieldname": "fab_ticket_visibility",
+					"fieldtype": "Select",
+					"label": "Ticket visibility",
+					"options": "Standard\nCompany-wide",
+					"default": "Standard",
+					"insert_after": "domain",
+					"description": "Standard: members see their own tickets, managers see all. Company-wide: every member sees all the customer's tickets.",
+				}
+			]
+		},
+		ignore_validate=True,
+	)
 
 
 def ensure_kb_article_fields():

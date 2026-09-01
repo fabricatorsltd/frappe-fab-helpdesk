@@ -396,3 +396,32 @@ msgstr "Tipo attività dev"
 
 msgid "Dev Task ID"
 msgstr "ID attività dev"
+
+# KB article editor (audience) + create-form suggestions
+
+msgid "Visibility"
+msgstr "Visibilità"
+
+msgid "Public"
+msgstr "Pubblico"
+
+msgid "Restricted"
+msgstr "Riservato"
+
+msgid "Visible to customers"
+msgstr "Visibile ai clienti"
+
+msgid "Add a customer..."
+msgstr "Aggiungi un cliente..."
+
+msgid "Not set"
+msgstr "Non impostata"
+
+msgid "These articles may already cover what you are looking for"
+msgstr "Questi articoli potrebbero già coprire ciò che cerchi"
+
+msgid "Searching..."
+msgstr "Ricerca in corso..."
+
+msgid "Please wait while we search for the answers"
+msgstr "Attendi mentre cerchiamo le risposte"
