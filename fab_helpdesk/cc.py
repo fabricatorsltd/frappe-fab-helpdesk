@@ -1,10 +1,36 @@
-from email.utils import getaddresses
+from email.utils import getaddresses, parseaddr
 
 import frappe
+from frappe import _
 
 
 def _parse_emails(raw):
 	return [addr.lower() for _, addr in getaddresses([raw or ""]) if addr and "@" in addr]
+
+
+def _own_mailboxes():
+	"""Lowercased addresses of our own Email Accounts."""
+	return {a.lower() for a in frappe.get_all("Email Account", pluck="email_id") if a}
+
+
+def reject_self_originated_ticket(doc, method=None):
+	"""Stop an email from one of our own mailboxes from opening a ticket.
+
+	Our outgoing acknowledgements and agent replies can loop back into the
+	inbox (a thread reply addressed to the support address, a mail-loop). Without
+	this guard that loop spawns a duplicate ticket. Runs on HD Ticket
+	before_insert; portal and agent-created tickets are never raised_by our own
+	mailbox, so only the email-loop case is blocked."""
+	if doc.get("via_customer_portal"):
+		return
+	raised_by = (parseaddr(doc.get("raised_by") or "")[1] or "").strip().lower()
+	if raised_by and raised_by in _own_mailboxes():
+		frappe.throw(
+			_("Ticket not created: sender {0} is one of our own mailboxes.").format(
+				raised_by
+			),
+			frappe.ValidationError,
+		)
 
 
 def _internal_addresses():

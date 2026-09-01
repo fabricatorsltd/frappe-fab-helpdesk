@@ -36,6 +36,9 @@ doc_events = {
 		"after_insert": "fab_helpdesk.onboarding.bind_domain_contacts",
 		"on_update": "fab_helpdesk.onboarding.bind_domain_contacts",
 	},
+	"HD Ticket": {
+		"before_insert": "fab_helpdesk.cc.reject_self_originated_ticket",
+	},
 	"Communication": {
 		"after_insert": "fab_helpdesk.cc.capture_ticket_cc",
 	},
