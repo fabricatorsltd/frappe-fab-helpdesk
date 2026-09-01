@@ -331,3 +331,20 @@ msgstr "Lingua"
 
 msgid "Could not change the language"
 msgstr "Impossibile cambiare la lingua"
+
+# Set-password page (post-invite)
+
+msgid "Set Password"
+msgstr "Imposta la password"
+
+msgid "Use strong passwords."
+msgstr "Usa password sicure."
+
+msgid "Confirm New Password"
+msgstr "Conferma la nuova password"
+
+msgid "Use minimum of 8 characters(case sensitive) with at least one number or special character."
+msgstr "Usa almeno 8 caratteri (maiuscole e minuscole distinte) con almeno un numero o un carattere speciale."
+
+msgid "Back to sign in"
+msgstr "Torna all'accesso"
