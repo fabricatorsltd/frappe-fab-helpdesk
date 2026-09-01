@@ -27,6 +27,11 @@ def article_permission_query(user: str | None = None) -> str:
 	if _is_staff(user):
 		return ""
 
+	# Defensive: before the audience custom fields are migrated in, fall back to
+	# no extra restriction so a partially-migrated site never errors on the KB.
+	if not frappe.db.has_column("HD Article", "fab_visibility"):
+		return ""
+
 	cond = (
 		"`tabHD Article`.status = 'Published' and "
 		"(ifnull(`tabHD Article`.fab_visibility, 'Public') = 'Public'"
