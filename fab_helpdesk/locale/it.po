@@ -348,3 +348,11 @@ msgstr "Usa almeno 8 caratteri (maiuscole e minuscole distinte) con almeno un nu
 
 msgid "Back to sign in"
 msgstr "Torna all'accesso"
+
+# Forgot-password page
+
+msgid "Please enter your email, we'll send you password reset link"
+msgstr "Inserisci la tua email, ti invieremo il link per reimpostare la password"
+
+msgid "Send Link"
+msgstr "Invia il link"

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: fab_helpdesk\n"
-"Language: fr\n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -12,347 +12,347 @@ msgid "Tickets"
 msgstr "Tickets"
 
 msgid "Knowledge Base"
-msgstr "Base de connaissances"
+msgstr "Base de conocimiento"
 
 msgid "List"
-msgstr "Liste"
+msgstr "Lista"
 
 msgid "Create"
-msgstr "Créer"
+msgstr "Crear"
 
 msgid "New Ticket"
-msgstr "Nouveau ticket"
+msgstr "Nuevo ticket"
 
 msgid "Subject"
-msgstr "Objet"
+msgstr "Asunto"
 
 msgid "Status"
-msgstr "Statut"
+msgstr "Estado"
 
 msgid "Priority"
-msgstr "Priorité"
+msgstr "Prioridad"
 
 msgid "Resolution"
-msgstr "Résolution"
+msgstr "Resolución"
 
 msgid "Team"
-msgstr "Équipe"
+msgstr "Equipo"
 
 msgid "Columns"
-msgstr "Colonnes"
+msgstr "Columnas"
 
 msgid "Toggle theme"
-msgstr "Changer de thème"
+msgstr "Cambiar tema"
 
 msgid "Log out"
-msgstr "Se déconnecter"
+msgstr "Cerrar sesión"
 
 msgid "Open"
-msgstr "Ouvert"
+msgstr "Abierto"
 
 msgid "Closed"
-msgstr "Fermé"
+msgstr "Cerrado"
 
 msgid "Resolved"
-msgstr "Résolu"
+msgstr "Resuelto"
 
 msgid "Replied"
-msgstr "Répondu"
+msgstr "Respondido"
 
 msgid "Paused"
-msgstr "En pause"
+msgstr "En pausa"
 
 msgid "Search"
-msgstr "Rechercher"
+msgstr "Buscar"
 
 msgid "Reply"
-msgstr "Répondre"
+msgstr "Responder"
 
 msgid "Comment"
-msgstr "Commentaire"
+msgstr "Comentario"
 
 msgid "Description"
-msgstr "Description"
+msgstr "Descripción"
 
 msgid "Settings"
-msgstr "Paramètres"
+msgstr "Configuración"
 
 msgid "Assigned To"
-msgstr "Assigné à"
+msgstr "Asignado a"
 
 msgid "Filters"
-msgstr "Filtres"
+msgstr "Filtros"
 
 msgid "Sort"
-msgstr "Trier"
+msgstr "Ordenar"
 
 msgid "Refresh"
-msgstr "Actualiser"
+msgstr "Actualizar"
 
 msgid "Activity"
-msgstr "Activité"
+msgstr "Actividad"
 
 msgid "created"
-msgstr "créé"
+msgstr "creado"
 
 # Frappe login page
 
 msgid "Sign In"
-msgstr "Se connecter"
+msgstr "Iniciar sesión"
 
 msgid "Welcome! Please sign in to continue."
-msgstr "Bienvenue ! Connectez-vous pour continuer."
+msgstr "¡Bienvenido! Inicie sesión para continuar."
 
 msgid "Forgot password?"
-msgstr "Mot de passe oublié ?"
+msgstr "¿Olvidó su contraseña?"
 
 msgid "Forgot Password?"
-msgstr "Mot de passe oublié ?"
+msgstr "¿Olvidó su contraseña?"
 
 msgid "Email"
-msgstr "E-mail"
+msgstr "Correo electrónico"
 
 msgid "Password"
-msgstr "Mot de passe"
+msgstr "Contraseña"
 
 msgid "Continue"
-msgstr "Continuer"
+msgstr "Continuar"
 
 msgid "Login with Email Link"
-msgstr "Se connecter avec un lien par e-mail"
+msgstr "Iniciar sesión con enlace por correo"
 
 msgid "Sign up"
-msgstr "S'inscrire"
+msgstr "Registrarse"
 
 msgid "Sign Up"
-msgstr "S'inscrire"
+msgstr "Registrarse"
 
 # Login page
 
 msgid "Login with {0}"
-msgstr "Se connecter avec {0}"
+msgstr "Iniciar sesión con {0}"
 
 msgid "Access not enabled"
-msgstr "Accès non activé"
+msgstr "Acceso no habilitado"
 
 msgid "Your Microsoft account is not linked to an authorized organization. Please contact support to request access."
-msgstr "Votre compte Microsoft n'est pas associé à une organisation autorisée. Veuillez contacter le support pour demander l'accès."
+msgstr "Su cuenta de Microsoft no está vinculada a una organización autorizada. Póngase en contacto con el soporte para solicitar acceso."
 
 msgid "Back to login"
-msgstr "Retour à la connexion"
+msgstr "Volver al inicio de sesión"
 
 # Ticket creation form
 
 msgid "A short description"
-msgstr "Une brève description"
+msgstr "Una breve descripción"
 
 msgid "Please enter a subject to continue"
-msgstr "Veuillez saisir un objet pour continuer"
+msgstr "Introduzca un asunto para continuar"
 
 msgid "Detailed explanation"
-msgstr "Explication détaillée"
+msgstr "Explicación detallada"
 
 msgid "Submit"
-msgstr "Envoyer"
+msgstr "Enviar"
 
 msgid "Discard"
-msgstr "Annuler"
+msgstr "Descartar"
 
 # SLA consultation page
 
 msgid "No SLA policy is active for your account."
-msgstr "Aucune politique SLA n'est active pour votre compte."
+msgstr "No hay ninguna política de SLA activa para su cuenta."
 
 # Ticket creation - SLA guidance
 
 msgid "Category"
-msgstr "Catégorie"
+msgstr "Categoría"
 
 msgid "Select a category"
-msgstr "Sélectionnez une catégorie"
+msgstr "Seleccione una categoría"
 
 msgid "Priority level"
-msgstr "Niveau de priorité"
+msgstr "Nivel de prioridad"
 
 msgid "Select the level"
-msgstr "Sélectionnez le niveau"
+msgstr "Seleccione el nivel"
 
 msgid "No specific SLA applies to this category."
-msgstr "Aucun SLA spécifique ne s'applique à cette catégorie."
+msgstr "No se aplica ningún SLA específico a esta categoría."
 
 msgid "Please select a category"
-msgstr "Veuillez sélectionner une catégorie"
+msgstr "Seleccione una categoría"
 
 msgid "Please select a priority level"
-msgstr "Veuillez sélectionner un niveau de priorité"
+msgstr "Seleccione un nivel de prioridad"
 
 # Ticket categories
 
 msgid "Incident"
-msgstr "Incident"
+msgstr "Incidencia"
 
 msgid "Request"
-msgstr "Demande"
+msgstr "Solicitud"
 
 msgid "Feature Request"
-msgstr "Nouvelle fonctionnalité"
+msgstr "Nueva funcionalidad"
 
 # SLA priority levels
 
 msgid "Critical"
-msgstr "Critique"
+msgstr "Crítica"
 
 msgid "High"
-msgstr "Élevée"
+msgstr "Alta"
 
 msgid "Medium"
-msgstr "Moyenne"
+msgstr "Media"
 
 msgid "Low"
-msgstr "Basse"
+msgstr "Baja"
 
 # Customer portal: ticket list + knowledge base
 
 msgid "Filter"
-msgstr "Filtre"
+msgstr "Filtro"
 
 msgid "No tickets found"
-msgstr "Aucun ticket trouvé"
+msgstr "No se encontraron tickets"
 
 msgid "Create a new one using the Create button."
-msgstr "Créez-en un nouveau à l'aide du bouton Créer."
+msgstr "Cree uno nuevo con el botón Crear."
 
 msgid "Ask a question..."
-msgstr "Posez une question..."
+msgstr "Haga una pregunta..."
 
 msgid "Categories"
-msgstr "Catégories"
+msgstr "Categorías"
 
 msgid "No categories available"
-msgstr "Aucune catégorie disponible"
+msgstr "No hay categorías disponibles"
 
 msgid "There are no categories published at the moment."
-msgstr "Aucune catégorie n'est publiée pour le moment."
+msgstr "En este momento no hay categorías publicadas."
 
 # Ticket acknowledgement email
 
 msgid "[Request received] {0}"
-msgstr "[Demande reçue] {0}"
+msgstr "[Solicitud recibida] {0}"
 
 msgid "Thank you for contacting us. We have received your request and opened a support ticket. Our team will get back to you shortly."
-msgstr "Merci de nous avoir contactés. Nous avons bien reçu votre demande et ouvert un ticket de support. Notre équipe vous répondra sous peu."
+msgstr "Gracias por ponerse en contacto con nosotros. Hemos recibido su solicitud y abierto un ticket de soporte. Nuestro equipo le responderá en breve."
 
 msgid "Request no."
-msgstr "Demande n°"
+msgstr "Solicitud n.º"
 
 msgid "You can add a comment to your request by replying to this email. To view or update it,"
-msgstr "Vous pouvez ajouter un commentaire à votre demande en répondant à cet e-mail. Pour la consulter ou la mettre à jour,"
+msgstr "Puede añadir un comentario a su solicitud respondiendo a este correo. Para verla o actualizarla,"
 
 msgid "click here"
-msgstr "cliquez ici"
+msgstr "haga clic aquí"
 
 msgid "If you did not submit this request, you can safely ignore this message."
-msgstr "Si vous n'êtes pas à l'origine de cette demande, vous pouvez ignorer ce message."
+msgstr "Si no envió esta solicitud, puede ignorar este mensaje sin problema."
 
 msgid "Reply above this line"
-msgstr "Répondez au-dessus de cette ligne"
+msgstr "Responda encima de esta línea"
 
 msgid "CCs"
 msgstr "CC"
 
 msgid "Add email..."
-msgstr "Ajouter un e-mail..."
+msgstr "Añadir correo..."
 
 msgid "Add a contact..."
-msgstr "Ajouter un contact..."
+msgstr "Añadir un contacto..."
 
 msgid "For this category we handle requests on a best-effort basis during office hours, taking the selected priority into account."
-msgstr "Pour cette catégorie, nous traitons les demandes au mieux de nos possibilités pendant les heures de bureau, en tenant compte de la priorité sélectionnée."
+msgstr "Para esta categoría gestionamos las solicitudes según nuestra disponibilidad durante el horario de oficina, teniendo en cuenta la prioridad seleccionada."
 
 # User invitation email
 
 msgid "{0} on {1}"
-msgstr "{0} sur {1}"
+msgstr "{0} en {1}"
 
 msgid "You've been invited to join {0}"
-msgstr "Vous avez été invité à rejoindre {0}"
+msgstr "Le han invitado a unirse a {0}"
 
 msgid "You've been invited to join {0}."
-msgstr "Vous avez été invité à rejoindre {0}."
+msgstr "Le han invitado a unirse a {0}."
 
 msgid "Click below to get started:"
-msgstr "Cliquez ci-dessous pour commencer :"
+msgstr "Haga clic abajo para empezar:"
 
 msgid "If you have any questions, reach out to your system administrator."
-msgstr "Pour toute question, contactez votre administrateur système."
+msgstr "Si tiene alguna pregunta, póngase en contacto con el administrador del sistema."
 
 # New ticket notification to agents
 
 msgid "[New request] #{0}: {1}"
-msgstr "[Nouvelle demande] #{0} : {1}"
+msgstr "[Nueva solicitud] #{0}: {1}"
 
 msgid "A new support request has arrived by email."
-msgstr "Une nouvelle demande de support est arrivée par e-mail."
+msgstr "Ha llegado una nueva solicitud de soporte por correo electrónico."
 
 msgid "[New reply] #{0}: {1}"
-msgstr "[Nouvelle réponse] #{0} : {1}"
+msgstr "[Nueva respuesta] #{0}: {1}"
 
 msgid "A new reply has arrived on a support request."
-msgstr "Une nouvelle réponse est arrivée sur une demande de support."
+msgstr "Ha llegado una nueva respuesta a una solicitud de soporte."
 
 msgid "From"
 msgstr "De"
 
 msgid "Customer"
-msgstr "Client"
+msgstr "Cliente"
 
 msgid "Not associated"
-msgstr "Non associé"
+msgstr "No asociado"
 
 msgid "Contract"
-msgstr "Contrat"
+msgstr "Contrato"
 
 msgid "Response due"
-msgstr "Échéance de réponse"
+msgstr "Respuesta antes de"
 
 msgid "Resolution due"
-msgstr "Échéance de résolution"
+msgstr "Resolución antes de"
 
 msgid "Message"
-msgstr "Message"
+msgstr "Mensaje"
 
 msgid "Open the ticket"
-msgstr "Ouvrir le ticket"
+msgstr "Abrir el ticket"
 
 # Customer portal language switcher
 
 msgid "Language"
-msgstr "Langue"
+msgstr "Idioma"
 
 msgid "Could not change the language"
-msgstr "Impossible de changer la langue"
+msgstr "No se pudo cambiar el idioma"
 
 # Set-password page (post-invite)
 
 msgid "Set Password"
-msgstr "Définir le mot de passe"
+msgstr "Establecer contraseña"
 
 msgid "Use strong passwords."
-msgstr "Utilisez des mots de passe forts."
+msgstr "Utilice contraseñas seguras."
 
 msgid "Confirm New Password"
-msgstr "Confirmez le nouveau mot de passe"
+msgstr "Confirme la nueva contraseña"
 
 msgid "Use minimum of 8 characters(case sensitive) with at least one number or special character."
-msgstr "Utilisez au moins 8 caractères (sensible à la casse) avec au moins un chiffre ou un caractère spécial."
+msgstr "Utilice un mínimo de 8 caracteres (distingue mayúsculas y minúsculas) con al menos un número o carácter especial."
 
 msgid "Back to sign in"
-msgstr "Retour à la connexion"
+msgstr "Volver al inicio de sesión"
 
 # Forgot-password page
 
 msgid "Please enter your email, we'll send you password reset link"
-msgstr "Saisissez votre e-mail, nous vous enverrons un lien de réinitialisation du mot de passe"
+msgstr "Introduzca su correo electrónico y le enviaremos un enlace para restablecer la contraseña"
 
 msgid "Send Link"
-msgstr "Envoyer le lien"
+msgstr "Enviar enlace"
