@@ -323,3 +323,11 @@ msgstr "Messaggio"
 
 msgid "Open the ticket"
 msgstr "Apri il ticket"
+
+# Customer portal language switcher
+
+msgid "Language"
+msgstr "Lingua"
+
+msgid "Could not change the language"
+msgstr "Impossibile cambiare la lingua"
