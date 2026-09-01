@@ -294,6 +294,12 @@ msgstr "[Nuova richiesta] #{0}: {1}"
 msgid "A new support request has arrived by email."
 msgstr "È arrivata una nuova richiesta di supporto via email."
 
+msgid "[New reply] #{0}: {1}"
+msgstr "[Nuova risposta] #{0}: {1}"
+
+msgid "A new reply has arrived on a support request."
+msgstr "È arrivata una nuova risposta a una richiesta di supporto."
+
 msgid "From"
 msgstr "Da"
 
