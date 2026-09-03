@@ -844,3 +844,28 @@ msgstr "Unir {0} tickets en el #{1}"
 
 msgid "Tickets merged successfully."
 msgstr "Tickets unidos."
+
+# Ticket comments
+
+msgid " commented"
+msgstr " comentó"
+
+msgid "Ticket {0} has been merged with ticket #{1}."
+msgstr "El ticket {0} se ha fusionado con el ticket #{1}."
+
+msgid "This ticket (#{0}) has been merged with ticket <a href = '/helpdesk/tickets/{1}'>#{1}</a>."
+msgstr "Este ticket (#{0}) se ha fusionado con el ticket <a href = '/helpdesk/tickets/{1}'>#{1}</a>."
+
+# Reply editor
+
+msgid "Sending..."
+msgstr "Enviando..."
+
+msgid "Add comment"
+msgstr "Comentar"
+
+msgid "Hi John, we are looking into this issue."
+msgstr "Hola, estamos revisando tu solicitud."
+
+msgid "@John could you please look into this?"
+msgstr "@Nombre ¿podrías echarle un vistazo?"
