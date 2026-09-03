@@ -523,3 +523,295 @@ msgstr "Tipo de ticket"
 
 msgid "Enter {0}"
 msgstr "Introducir {0}"
+
+# Ticket list
+
+msgid "ID"
+msgstr "ID"
+
+msgid "First response"
+msgstr "Primera respuesta"
+
+msgid "Created"
+msgstr "Creado"
+
+msgid "Created On"
+msgstr "Creado el"
+
+msgid "Last Modified"
+msgstr "Última modificación"
+
+msgid "Modified By"
+msgstr "Modificado por"
+
+msgid "Last Updated By"
+msgstr "Última actualización por"
+
+msgid "Owner"
+msgstr "Propietario"
+
+msgid "Assigned to"
+msgstr "Asignado a"
+
+msgid "Assigned on"
+msgstr "Asignado el"
+
+msgid "Awaiting Response"
+msgstr "Esperando respuesta"
+
+msgid "Save Changes"
+msgstr "Guardar cambios"
+
+msgid "Choose a field"
+msgstr "Elige un campo"
+
+msgid "No fields found"
+msgstr "No se encontraron campos"
+
+msgid "Replace filter"
+msgstr "Reemplazar filtro"
+
+msgid "Remove filter"
+msgstr "Quitar filtro"
+
+msgid "Clear all"
+msgstr "Borrar todo"
+
+msgid "Add Column"
+msgstr "Añadir columna"
+
+msgid "Reset to Default"
+msgstr "Restablecer valores predeterminados"
+
+msgid "Width"
+msgstr "Ancho"
+
+msgid "Width can be in number, pixel or rem (eg. 3, 30px, 10rem)"
+msgstr "El ancho puede ser un número, píxeles o rem (ej. 3, 30px, 10rem)"
+
+msgid "Add Sort"
+msgstr "Añadir orden"
+
+msgid "Clear Sort"
+msgstr "Borrar orden"
+
+msgid "Empty - Choose a field to sort by"
+msgstr "Vacío - Elige un campo para ordenar"
+
+# Ticket list: SLA badges
+
+msgid "Fulfilled"
+msgstr "Cumplido"
+
+msgid "On Hold"
+msgstr "En espera"
+
+msgid "Overdue by {0}"
+msgstr "Retrasado {0}"
+
+msgid "Failed by {0}"
+msgstr "Incumplido por {0}"
+
+msgid "{0} left (On Hold)"
+msgstr "{0} restante (en espera)"
+
+msgid "year"
+msgstr "año"
+
+msgid "years"
+msgstr "años"
+
+msgid "month"
+msgstr "mes"
+
+msgid "months"
+msgstr "meses"
+
+msgid "day"
+msgstr "día"
+
+msgid "days"
+msgstr "días"
+
+# Ticket history
+
+msgid "set status to {0}"
+msgstr "cambió el estado a {0}"
+
+msgid "set priority to {0}"
+msgstr "cambió la prioridad a {0}"
+
+msgid "set team to {0}"
+msgstr "cambió el equipo a {0}"
+
+msgid "set type to {0}"
+msgstr "cambió el tipo a {0}"
+
+msgid "set contact to {0}"
+msgstr "cambió el contacto a {0}"
+
+msgid "set SLA to {0}"
+msgstr "cambió el SLA a {0}"
+
+msgid "cleared status"
+msgstr "eliminó el estado"
+
+msgid "cleared priority"
+msgstr "eliminó la prioridad"
+
+msgid "cleared team"
+msgstr "eliminó el equipo"
+
+msgid "cleared type"
+msgstr "eliminó el tipo"
+
+msgid "cleared contact"
+msgstr "eliminó el contacto"
+
+msgid "cleared SLA"
+msgstr "eliminó el SLA"
+
+msgid "assigned {0}"
+msgstr "asignó {0}"
+
+msgid "unassigned {0}"
+msgstr "quitó la asignación a {0}"
+
+msgid "split the ticket from #{0}"
+msgstr "dividió el ticket desde #{0}"
+
+msgid "automatically closed the ticket after {0} days of inactivity"
+msgstr "cerró automáticamente el ticket tras {0} días de inactividad"
+
+msgid "themselves"
+msgstr "sí mismo"
+
+msgid "viewed this"
+msgstr "ha visto"
+
+msgid "Show"
+msgstr "Mostrar"
+
+msgid "Hide"
+msgstr "Ocultar"
+
+msgid "changes from"
+msgstr "cambios de"
+
+msgid "{0} made a call to {1}"
+msgstr "{0} llamó a {1}"
+
+msgid "Unknown"
+msgstr "Desconocido"
+
+# HD Ticket fields
+
+msgid "Average Response Time"
+msgstr "Tiempo medio de respuesta"
+
+msgid "Feedback (Extra)"
+msgstr "Comentarios (extra)"
+
+msgid "Feedback (Option)"
+msgstr "Comentarios (opción)"
+
+msgid "First Responded On"
+msgstr "Primera respuesta el"
+
+msgid "First Response Failed By"
+msgstr "Primera respuesta incumplida por"
+
+msgid "First Response Time"
+msgstr "Tiempo de primera respuesta"
+
+msgid "Last Agent Response"
+msgstr "Última respuesta del agente"
+
+msgid "Last Customer Response"
+msgstr "Última respuesta del cliente"
+
+msgid "Merged With"
+msgstr "Fusionado con"
+
+msgid "On Hold Since"
+msgstr "En espera desde"
+
+msgid "Opening Date"
+msgstr "Fecha de apertura"
+
+msgid "Quantity"
+msgstr "Cantidad"
+
+msgid "Raised By (Email)"
+msgstr "Abierto por (correo)"
+
+msgid "Resolution By"
+msgstr "Resolución antes de"
+
+msgid "Resolution Date"
+msgstr "Fecha de resolución"
+
+msgid "Resolution Details"
+msgstr "Detalles de la resolución"
+
+msgid "Resolution Failed By"
+msgstr "Resolución incumplida por"
+
+msgid "Resolution Time"
+msgstr "Tiempo de resolución"
+
+msgid "Response By"
+msgstr "Respuesta antes de"
+
+msgid "SLA Status"
+msgstr "Estado del SLA"
+
+msgid "Status Category"
+msgstr "Categoría del estado"
+
+msgid "Ticket Merged"
+msgstr "Ticket fusionado"
+
+msgid "Ticket Split From"
+msgstr "Ticket dividido desde"
+
+msgid "Ticket raised outside working hours"
+msgstr "Ticket abierto fuera del horario laboral"
+
+msgid "Total Hold Time"
+msgstr "Tiempo total en espera"
+
+msgid "User Resolution Time"
+msgstr "Tiempo de resolución del usuario"
+
+msgid "Via Customer Portal"
+msgstr "Desde el portal de clientes"
+
+# Customer portal ticket page
+
+msgid "Type a message"
+msgstr "Escribe un mensaje"
+
+msgid "Expected First Response"
+msgstr "Primera respuesta prevista"
+
+msgid "Expected Resolution"
+msgstr "Resolución prevista"
+
+msgid "Close Ticket"
+msgstr "Cerrar el ticket"
+
+msgid "Are you sure you want to close this ticket?"
+msgstr "¿Seguro que quieres cerrar este ticket?"
+
+msgid "Ticket updated succesfully."
+msgstr "Ticket actualizado."
+
+msgid "Ticket closed successfully."
+msgstr "Ticket cerrado."
+
+msgid "This date is calculated based on configured SLAs, working hours, and holidays."
+msgstr "Esta fecha se calcula según los SLA configurados, el horario laboral y los festivos."
+
+msgid "No Data Found"
+msgstr "No se encontraron datos"
