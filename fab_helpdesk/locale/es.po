@@ -427,3 +427,99 @@ msgstr "Buscando..."
 
 msgid "Please wait while we search for the answers"
 msgstr "Espere mientras buscamos las respuestas"
+
+# Relative times
+
+msgid "Just now"
+msgstr "Ahora mismo"
+
+msgid "1 minute ago"
+msgstr "hace 1 minuto"
+
+msgid "{0} minutes ago"
+msgstr "hace {0} minutos"
+
+msgid "1 hour ago"
+msgstr "hace 1 hora"
+
+msgid "{0} hours ago"
+msgstr "hace {0} horas"
+
+msgid "Yesterday"
+msgstr "Ayer"
+
+msgid "{0} days ago"
+msgstr "hace {0} días"
+
+msgid "1 week ago"
+msgstr "hace 1 semana"
+
+msgid "{0} weeks ago"
+msgstr "hace {0} semanas"
+
+msgid "1 month ago"
+msgstr "hace 1 mes"
+
+msgid "{0} months ago"
+msgstr "hace {0} meses"
+
+msgid "1 year ago"
+msgstr "hace 1 año"
+
+msgid "{0} years ago"
+msgstr "hace {0} años"
+
+msgid "Tomorrow"
+msgstr "Mañana"
+
+msgid "In 1 minute"
+msgstr "En 1 minuto"
+
+msgid "In {0} minutes"
+msgstr "En {0} minutos"
+
+msgid "In 1 hour"
+msgstr "En 1 hora"
+
+msgid "In {0} hours"
+msgstr "En {0} horas"
+
+msgid "In {0} days"
+msgstr "En {0} días"
+
+msgid "In {0} weeks"
+msgstr "En {0} semanas"
+
+msgid "In {0} months"
+msgstr "En {0} meses"
+
+msgid "In 1 year"
+msgstr "En 1 año"
+
+msgid "In {0} years"
+msgstr "En {0} años"
+
+# Agent ticket header
+
+msgid "Source"
+msgstr "Origen"
+
+msgid "Portal"
+msgstr "Portal"
+
+msgid "Mail"
+msgstr "Correo"
+
+msgid "via"
+msgstr "vía"
+
+msgid "Calls"
+msgstr "Llamadas"
+
+# Ticket statuses and sidebar fields
+
+msgid "Ticket Type"
+msgstr "Tipo de ticket"
+
+msgid "Enter {0}"
+msgstr "Introducir {0}"

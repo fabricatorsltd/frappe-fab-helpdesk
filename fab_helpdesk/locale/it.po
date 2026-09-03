@@ -433,3 +433,104 @@ msgstr "Ricerca in corso..."
 
 msgid "Please wait while we search for the answers"
 msgstr "Attendi mentre cerchiamo le risposte"
+
+# Frappe email footer (print link)
+
+msgid "View this in your browser"
+msgstr "Visualizza nel browser"
+
+# Relative times
+
+msgid "Just now"
+msgstr "Adesso"
+
+msgid "1 minute ago"
+msgstr "1 minuto fa"
+
+msgid "{0} minutes ago"
+msgstr "{0} minuti fa"
+
+msgid "1 hour ago"
+msgstr "1 ora fa"
+
+msgid "{0} hours ago"
+msgstr "{0} ore fa"
+
+msgid "Yesterday"
+msgstr "Ieri"
+
+msgid "{0} days ago"
+msgstr "{0} giorni fa"
+
+msgid "1 week ago"
+msgstr "1 settimana fa"
+
+msgid "{0} weeks ago"
+msgstr "{0} settimane fa"
+
+msgid "1 month ago"
+msgstr "1 mese fa"
+
+msgid "{0} months ago"
+msgstr "{0} mesi fa"
+
+msgid "1 year ago"
+msgstr "1 anno fa"
+
+msgid "{0} years ago"
+msgstr "{0} anni fa"
+
+msgid "Tomorrow"
+msgstr "Domani"
+
+msgid "In 1 minute"
+msgstr "Tra 1 minuto"
+
+msgid "In {0} minutes"
+msgstr "Tra {0} minuti"
+
+msgid "In 1 hour"
+msgstr "Tra 1 ora"
+
+msgid "In {0} hours"
+msgstr "Tra {0} ore"
+
+msgid "In {0} days"
+msgstr "Tra {0} giorni"
+
+msgid "In {0} weeks"
+msgstr "Tra {0} settimane"
+
+msgid "In {0} months"
+msgstr "Tra {0} mesi"
+
+msgid "In 1 year"
+msgstr "Tra 1 anno"
+
+msgid "In {0} years"
+msgstr "Tra {0} anni"
+
+# Agent ticket header
+
+msgid "Source"
+msgstr "Origine"
+
+msgid "Portal"
+msgstr "Portale"
+
+msgid "Mail"
+msgstr "Email"
+
+msgid "via"
+msgstr "via"
+
+msgid "Calls"
+msgstr "Chiamate"
+
+# Ticket statuses and sidebar fields
+
+msgid "Ticket Type"
+msgstr "Tipo ticket"
+
+msgid "Enter {0}"
+msgstr "Inserisci {0}"

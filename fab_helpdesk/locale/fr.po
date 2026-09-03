@@ -430,3 +430,99 @@ msgstr "Recherche..."
 
 msgid "Please wait while we search for the answers"
 msgstr "Veuillez patienter pendant que nous cherchons les réponses"
+
+# Relative times
+
+msgid "Just now"
+msgstr "À l'instant"
+
+msgid "1 minute ago"
+msgstr "il y a 1 minute"
+
+msgid "{0} minutes ago"
+msgstr "il y a {0} minutes"
+
+msgid "1 hour ago"
+msgstr "il y a 1 heure"
+
+msgid "{0} hours ago"
+msgstr "il y a {0} heures"
+
+msgid "Yesterday"
+msgstr "Hier"
+
+msgid "{0} days ago"
+msgstr "il y a {0} jours"
+
+msgid "1 week ago"
+msgstr "il y a 1 semaine"
+
+msgid "{0} weeks ago"
+msgstr "il y a {0} semaines"
+
+msgid "1 month ago"
+msgstr "il y a 1 mois"
+
+msgid "{0} months ago"
+msgstr "il y a {0} mois"
+
+msgid "1 year ago"
+msgstr "il y a 1 an"
+
+msgid "{0} years ago"
+msgstr "il y a {0} ans"
+
+msgid "Tomorrow"
+msgstr "Demain"
+
+msgid "In 1 minute"
+msgstr "Dans 1 minute"
+
+msgid "In {0} minutes"
+msgstr "Dans {0} minutes"
+
+msgid "In 1 hour"
+msgstr "Dans 1 heure"
+
+msgid "In {0} hours"
+msgstr "Dans {0} heures"
+
+msgid "In {0} days"
+msgstr "Dans {0} jours"
+
+msgid "In {0} weeks"
+msgstr "Dans {0} semaines"
+
+msgid "In {0} months"
+msgstr "Dans {0} mois"
+
+msgid "In 1 year"
+msgstr "Dans 1 an"
+
+msgid "In {0} years"
+msgstr "Dans {0} ans"
+
+# Agent ticket header
+
+msgid "Source"
+msgstr "Source"
+
+msgid "Portal"
+msgstr "Portail"
+
+msgid "Mail"
+msgstr "E-mail"
+
+msgid "via"
+msgstr "via"
+
+msgid "Calls"
+msgstr "Appels"
+
+# Ticket statuses and sidebar fields
+
+msgid "Ticket Type"
+msgstr "Type de ticket"
+
+msgid "Enter {0}"
+msgstr "Saisir {0}"
