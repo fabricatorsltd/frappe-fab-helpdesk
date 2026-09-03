@@ -883,3 +883,8 @@ msgstr "Ciao, stiamo verificando la richiesta."
 
 msgid "@John could you please look into this?"
 msgstr "@Nome potresti dare un'occhiata?"
+
+# Knowledge base editor
+
+msgid "Write your article here..."
+msgstr "Scrivi qui il tuo articolo..."

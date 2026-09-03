@@ -869,3 +869,8 @@ msgstr "Hola, estamos revisando tu solicitud."
 
 msgid "@John could you please look into this?"
 msgstr "@Nombre ¿podrías echarle un vistazo?"
+
+# Knowledge base editor
+
+msgid "Write your article here..."
+msgstr "Escribe aquí tu artículo..."
