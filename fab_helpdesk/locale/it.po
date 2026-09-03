@@ -324,6 +324,14 @@ msgstr "Messaggio"
 msgid "Open the ticket"
 msgstr "Apri il ticket"
 
+# Assignment notification to agent
+
+msgid "[Assigned to you] #{0}: {1}"
+msgstr "[Assegnata a te] #{0}: {1}"
+
+msgid "Request #{0} has been assigned to you by {1}."
+msgstr "La richiesta #{0} ti è stata assegnata da {1}."
+
 # Customer portal language switcher
 
 msgid "Language"
