@@ -818,3 +818,32 @@ msgstr "Cette date est calculée selon les SLA configurés, les heures ouvrées 
 
 msgid "No Data Found"
 msgstr "Aucune donnée trouvée"
+
+# Bulk merge
+
+msgid "Bulk Reply"
+msgstr "Réponse groupée"
+
+msgid "Merge"
+msgstr "Fusionner"
+
+msgid "Select at least two tickets"
+msgstr "Sélectionnez au moins deux tickets"
+
+msgid "All comments and emails of the other selected tickets will be merged into the target ticket."
+msgstr "Tous les commentaires et e-mails des autres tickets sélectionnés seront fusionnés dans le ticket cible."
+
+msgid "Target ticket"
+msgstr "Ticket cible"
+
+msgid "{0} selected ticket(s) cannot be merged and will be ignored."
+msgstr "{0} ticket(s) sélectionné(s) ne peuvent pas être fusionnés et seront ignorés."
+
+msgid "This action is irreversible."
+msgstr "Cette action est irréversible."
+
+msgid "Merge {0} tickets into #{1}"
+msgstr "Fusionner {0} tickets dans le #{1}"
+
+msgid "Tickets merged successfully."
+msgstr "Tickets fusionnés."
