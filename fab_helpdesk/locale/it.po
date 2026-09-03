@@ -407,6 +407,9 @@ msgstr "ID attività dev"
 
 # KB article editor (audience) + create-form suggestions
 
+msgid "New Article"
+msgstr "Nuovo articolo"
+
 msgid "Visibility"
 msgstr "Visibilità"
 
