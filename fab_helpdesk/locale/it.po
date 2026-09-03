@@ -53,6 +53,9 @@ msgstr "Aperto"
 msgid "Closed"
 msgstr "Chiuso"
 
+msgid "Merged"
+msgstr "Unito"
+
 msgid "Resolved"
 msgstr "Risolto"
 
@@ -948,3 +951,14 @@ msgstr "Nessun ticket trovato per il link utilizzato."
 
 msgid "Ticket Not Found"
 msgstr "Ticket non trovato"
+
+# Merged ticket status
+
+msgid "System only"
+msgstr "Solo di sistema"
+
+msgid "Set by the system, hidden from the status pickers."
+msgstr "Impostato dal sistema, nascosto nei selettori di stato."
+
+msgid "This ticket was merged into #{0}, reply from there."
+msgstr "Questo ticket è stato unito al #{0}, rispondi da lì."

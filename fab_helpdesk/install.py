@@ -16,6 +16,10 @@ PRIORITY_RENAME = [
 # customer-facing categories: (name, sla_bound). Incident is the only SLA-bound one.
 CUSTOMER_TICKET_TYPES = [("Incident", 1), ("Request", 0), ("Feature Request", 0)]
 
+# Status of a ticket merged into another one. Only merge_ticket sets it; the
+# fab_system_only flag keeps it out of the agent and customer status pickers.
+MERGED_STATUS = "Merged"
+
 
 def after_install():
 	clear_portal_default_customer_role()
@@ -24,6 +28,7 @@ def after_install():
 	ensure_cc_field()
 	ensure_kb_article_fields()
 	ensure_customer_ticket_visibility_field()
+	ensure_merged_ticket_status()
 	backfill_customer_landing_app()
 
 
@@ -34,7 +39,64 @@ def after_migrate():
 	ensure_cc_field()
 	ensure_kb_article_fields()
 	ensure_customer_ticket_visibility_field()
+	ensure_merged_ticket_status()
 	backfill_customer_landing_app()
+
+
+def ensure_merged_ticket_status():
+	"""Merged tickets used to sit in Closed, indistinguishable from a real closure.
+	Give them their own status, flagged system-only so no picker offers it."""
+	from frappe.custom.doctype.custom_field.custom_field import create_custom_fields
+
+	create_custom_fields(
+		{
+			"HD Ticket Status": [
+				{
+					"fieldname": "fab_system_only",
+					"fieldtype": "Check",
+					"label": "System only",
+					"insert_after": "enabled",
+					"description": "Set by the system, hidden from the status pickers.",
+				}
+			]
+		},
+		ignore_validate=True,
+	)
+
+	if not frappe.db.exists("HD Ticket Status", MERGED_STATUS):
+		closed_order = frappe.db.get_value("HD Ticket Status", "Closed", "order") or 4
+		frappe.get_doc(
+			{
+				"doctype": "HD Ticket Status",
+				"label_agent": MERGED_STATUS,
+				"label_customer": MERGED_STATUS,
+				"category": "Resolved",
+				"color": "Gray",
+				"order": closed_order + 1,
+				"enabled": 1,
+			}
+		).insert(ignore_permissions=True)
+
+	frappe.db.set_value("HD Ticket Status", MERGED_STATUS, "fab_system_only", 1)
+	backfill_merged_ticket_status()
+
+
+def backfill_merged_ticket_status():
+	"""Tickets merged before the status existed are still marked Closed. Written
+	straight to the database: the merge already notified everyone, so no hook,
+	activity entry or feedback mail should fire again."""
+	names = frappe.get_all(
+		"HD Ticket",
+		filters={"is_merged": 1, "status": ["!=", MERGED_STATUS]},
+		pluck="name",
+	)
+	for name in names:
+		frappe.db.set_value(
+			"HD Ticket",
+			name,
+			{"status": MERGED_STATUS, "status_category": "Resolved"},
+			update_modified=False,
+		)
 
 
 def ensure_customer_ticket_visibility_field():
