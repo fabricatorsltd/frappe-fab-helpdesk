@@ -888,3 +888,63 @@ msgstr "@Nome potresti dare un'occhiata?"
 
 msgid "Write your article here..."
 msgstr "Scrivi qui il tuo articolo..."
+
+# Feedback email
+
+msgid "[Feedback] #{0}: {1}"
+msgstr "[Feedback] #{0}: {1}"
+
+msgid "Your request has been closed. How did we do?"
+msgstr "La tua richiesta è stata chiusa. Come è andata?"
+
+msgid "Rate the support you received"
+msgstr "Valuta il supporto ricevuto"
+
+msgid "It takes less than a minute. Thank you."
+msgstr "Ci vuole meno di un minuto. Grazie."
+
+# Feedback form
+
+msgid "Rate Your Support Experience"
+msgstr "Valuta il supporto ricevuto"
+
+msgid "Feedback Rating"
+msgstr "Valutazione"
+
+msgctxt "Button in web form"
+msgid "Submit another response"
+msgstr "Invia un'altra risposta"
+
+msgctxt "Button in web form"
+msgid "Save"
+msgstr "Invia"
+
+msgid "Submitted"
+msgstr "Inviato"
+
+msgid "Thank you for spending your valuable time to fill this form"
+msgstr "Grazie per aver dedicato il tuo tempo a compilare questo modulo."
+
+msgid "Unauthorized access."
+msgstr "Accesso non autorizzato."
+
+msgid "Unauthorized Access"
+msgstr "Accesso non autorizzato"
+
+msgid "Ticket does not exist."
+msgstr "Il ticket non esiste."
+
+msgid "Tampered Access"
+msgstr "Accesso non valido"
+
+msgid "You have already provided feedback for this ticket."
+msgstr "Hai già inviato una valutazione per questo ticket."
+
+msgid "Feedback Already Exists"
+msgstr "Valutazione già inviata"
+
+msgid "Ticket not found for the provided key."
+msgstr "Nessun ticket trovato per il link utilizzato."
+
+msgid "Ticket Not Found"
+msgstr "Ticket non trovato"
