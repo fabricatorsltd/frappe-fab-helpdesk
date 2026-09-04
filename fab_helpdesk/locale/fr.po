@@ -289,6 +289,26 @@ msgstr "Cliquez ci-dessous pour commencer :"
 msgid "If you have any questions, reach out to your system administrator."
 msgstr "Pour toute question, contactez votre administrateur système."
 
+# User invitation expiry and cancellation emails
+
+msgid "Invitation to join {0} expired"
+msgstr "Invitation à rejoindre {0} expirée"
+
+msgid "Your invitation to join {0} has expired."
+msgstr "Votre invitation à rejoindre {0} a expiré."
+
+msgid "You can ask your team to resend the invitation if you'd still like to join."
+msgstr "Vous pouvez demander à votre équipe de renvoyer l'invitation si vous souhaitez toujours nous rejoindre."
+
+msgid "Invitation to join {0} cancelled"
+msgstr "Invitation à rejoindre {0} annulée"
+
+msgid "Your invitation to join {0} has been cancelled by the site administrator."
+msgstr "Votre invitation à rejoindre {0} a été annulée par l'administrateur du site."
+
+msgid "If this was a mistake or you need access again, please reach out to your team."
+msgstr "S'il s'agit d'une erreur ou si vous avez de nouveau besoin d'un accès, contactez votre équipe."
+
 # New ticket notification to agents
 
 msgid "[New request] #{0}: {1}"
