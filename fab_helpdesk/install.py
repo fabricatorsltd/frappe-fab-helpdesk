@@ -29,6 +29,7 @@ def after_install():
 	ensure_kb_article_fields()
 	ensure_customer_ticket_visibility_field()
 	ensure_merged_ticket_status()
+	ensure_inactivity_fields()
 	backfill_customer_landing_app()
 
 
@@ -40,7 +41,94 @@ def after_migrate():
 	ensure_kb_article_fields()
 	ensure_customer_ticket_visibility_field()
 	ensure_merged_ticket_status()
+	ensure_inactivity_fields()
 	backfill_customer_landing_app()
+
+
+def ensure_inactivity_fields():
+	"""Reminder and auto-close for tickets waiting on the customer.
+
+	The settings drive the daily job in the helpdesk fork
+	(hd_ticket.inactivity.run); the ticket field records when the reminder went
+	out, so it is sent once per agent reply."""
+	from frappe.custom.doctype.custom_field.custom_field import create_custom_fields
+
+	create_custom_fields(
+		{
+			"HD Settings": [
+				{
+					"fieldname": "fab_inactivity_section",
+					"fieldtype": "Section Break",
+					"label": "Customer inactivity",
+					"insert_after": "auto_close_after_days",
+				},
+				{
+					"fieldname": "fab_inactivity_enabled",
+					"fieldtype": "Check",
+					"label": "Remind and close tickets waiting on the customer",
+					"default": "0",
+					"insert_after": "fab_inactivity_section",
+				},
+				{
+					"fieldname": "fab_inactivity_status",
+					"fieldtype": "Link",
+					"label": "Waiting for customer status",
+					"options": "HD Ticket Status",
+					"default": "Replied",
+					"insert_after": "fab_inactivity_enabled",
+					"depends_on": "fab_inactivity_enabled",
+					"mandatory_depends_on": "eval: doc.fab_inactivity_enabled",
+				},
+				{
+					"fieldname": "fab_inactivity_reminder_days",
+					"fieldtype": "Int",
+					"label": "Remind after (Days)",
+					"default": "3",
+					"insert_after": "fab_inactivity_status",
+					"depends_on": "fab_inactivity_enabled",
+				},
+				{
+					"fieldname": "fab_inactivity_close_days",
+					"fieldtype": "Int",
+					"label": "Close after (Days)",
+					"default": "7",
+					"insert_after": "fab_inactivity_reminder_days",
+					"depends_on": "fab_inactivity_enabled",
+				},
+			],
+			"HD Ticket": [
+				{
+					"fieldname": "fab_inactivity_reminder_on",
+					"fieldtype": "Datetime",
+					"label": "Inactivity reminder sent on",
+					"insert_after": "fab_cc",
+					"hidden": 1,
+					"read_only": 1,
+					"no_copy": 1,
+				}
+			],
+		},
+		ignore_validate=True,
+	)
+	seed_inactivity_defaults()
+
+
+# HD Settings is a Single: a custom field's default never materialises, the value
+# is simply absent from tabSingles until something writes it. Seed it once so the
+# feature has sane numbers the day it is switched on, without overwriting a choice
+# already made.
+INACTIVITY_DEFAULTS = {
+	"fab_inactivity_status": "Replied",
+	"fab_inactivity_reminder_days": "3",
+	"fab_inactivity_close_days": "7",
+}
+
+
+def seed_inactivity_defaults():
+	stored = frappe.db.get_singles_dict("HD Settings")
+	for field, value in INACTIVITY_DEFAULTS.items():
+		if field not in stored:
+			frappe.db.set_single_value("HD Settings", field, value)
 
 
 def ensure_merged_ticket_status():

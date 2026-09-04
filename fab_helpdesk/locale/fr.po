@@ -974,3 +974,62 @@ msgstr "Défini par le système, masqué dans les sélecteurs de statut."
 
 msgid "This ticket was merged into #{0}, reply from there."
 msgstr "Ce ticket a été fusionné dans le #{0}, répondez depuis celui-ci."
+
+# Customer inactivity
+
+msgid "Customer inactivity"
+msgstr "Inactivité du client"
+
+msgid "Remind and close tickets waiting on the customer"
+msgstr "Relancer et fermer les tickets en attente du client"
+
+msgid "Remind the customer of a ticket left waiting on them, then close it if no reply arrives."
+msgstr "Relancer le client sur un ticket laissé en attente, puis le fermer si aucune réponse n'arrive."
+
+msgid "Waiting for customer status"
+msgstr "Statut d'attente du client"
+
+msgid "Remind after (Days)"
+msgstr "Relancer après (jours)"
+
+msgid "Close after (Days)"
+msgstr "Fermer après (jours)"
+
+msgid "Inactivity reminder sent on"
+msgstr "Relance d'inactivité envoyée le"
+
+msgid "Inactivity day counts cannot be negative or zero"
+msgstr "Les jours d'inactivité ne peuvent pas être négatifs ou nuls"
+
+msgid "The reminder must be sent before the ticket is closed"
+msgstr "La relance doit être envoyée avant la fermeture du ticket"
+
+msgid "[Reminder] {0} (#{1})"
+msgstr "[Relance] {0} (#{1})"
+
+msgid "[Closed] {0} (#{1})"
+msgstr "[Fermée] {0} (#{1})"
+
+msgid "We have not received a reply from you on request #{0} yet."
+msgstr "Nous n'avons pas encore reçu votre réponse concernant la demande n° {0}."
+
+msgid "If we do not hear from you by {0}, we will close it."
+msgstr "Sans nouvelles de votre part d'ici au {0}, nous la fermerons."
+
+msgid "Reply to this email or open the request in the portal:"
+msgstr "Répondez à cet e-mail ou ouvrez la demande dans le portail :"
+
+msgid "We have closed request #{0} because we did not receive a reply."
+msgstr "Nous avons fermé la demande n° {0} faute de réponse."
+
+msgid "If the problem persists, reply to this email and we will reopen it."
+msgstr "Si le problème persiste, répondez à cet e-mail et nous la rouvrirons."
+
+msgid "sent the customer an inactivity reminder"
+msgstr "a envoyé au client une relance d'inactivité"
+
+msgid "closed the ticket after {0} days without a reply from the customer"
+msgstr "a fermé le ticket après {0} jours sans réponse du client"
+
+msgid "The waiting for customer status must be of <u>Paused</u> category."
+msgstr "Le statut d'attente du client doit être de la catégorie <u>En pause</u>."
