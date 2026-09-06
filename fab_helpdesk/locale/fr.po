@@ -1033,3 +1033,51 @@ msgstr "a fermé le ticket après {0} jours sans réponse du client"
 
 msgid "The waiting for customer status must be of <u>Paused</u> category."
 msgstr "Le statut d'attente du client doit être de la catégorie <u>En pause</u>."
+
+msgid "Rate this ticket"
+msgstr "Évaluez ce ticket"
+
+msgid "Select a rating"
+msgstr "Choisissez une note"
+
+msgid "Pick an option"
+msgstr "Choisissez une option"
+
+msgid "Tell us more"
+msgstr "Dites-nous en plus"
+
+msgid "Rating"
+msgstr "Note"
+
+msgid "Feedback"
+msgstr "Avis"
+
+msgid "Response did not help"
+msgstr "La réponse n'a pas aidé"
+
+msgid "No resolution provided"
+msgstr "Aucune solution apportée"
+
+msgid "Delayed response time"
+msgstr "Réponse tardive"
+
+msgid "Adequate help, bit slow"
+msgstr "Aide correcte, un peu lente"
+
+msgid "Clear guidance given"
+msgstr "Conseils clairs"
+
+msgid "Helpful answers, reasonable wait"
+msgstr "Réponses utiles, attente raisonnable"
+
+msgid "Prompt, informative support"
+msgstr "Support rapide et informatif"
+
+msgid "Quick and precise solutions"
+msgstr "Solutions rapides et précises"
+
+msgid "Instant, top-notch help"
+msgstr "Aide immédiate et excellente"
+
+msgid "Exceptional support experience"
+msgstr "Expérience de support exceptionnelle"
