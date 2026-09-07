@@ -30,6 +30,7 @@ def after_install():
 	ensure_customer_ticket_visibility_field()
 	ensure_merged_ticket_status()
 	ensure_inactivity_fields()
+	ensure_digest_fields()
 	backfill_customer_landing_app()
 
 
@@ -42,6 +43,7 @@ def after_migrate():
 	ensure_customer_ticket_visibility_field()
 	ensure_merged_ticket_status()
 	ensure_inactivity_fields()
+	ensure_digest_fields()
 	backfill_customer_landing_app()
 
 
@@ -127,6 +129,73 @@ INACTIVITY_DEFAULTS = {
 def seed_inactivity_defaults():
 	stored = frappe.db.get_singles_dict("HD Settings")
 	for field, value in INACTIVITY_DEFAULTS.items():
+		if field not in stored:
+			frappe.db.set_single_value("HD Settings", field, value)
+
+
+def ensure_digest_fields():
+	"""Weekday morning digest of the tickets still open.
+
+	The settings drive the hourly job in the helpdesk fork (hd_ticket.digest.run);
+	the agent field records the day the digest went out, in the agent's own
+	timezone, so it is sent once a day whatever the job does."""
+	from frappe.custom.doctype.custom_field.custom_field import create_custom_fields
+
+	create_custom_fields(
+		{
+			"HD Settings": [
+				{
+					"fieldname": "fab_digest_section",
+					"fieldtype": "Section Break",
+					"label": "Daily agent digest",
+					"insert_after": "fab_inactivity_close_days",
+				},
+				{
+					"fieldname": "fab_digest_enabled",
+					"fieldtype": "Check",
+					"label": "Send agents a daily digest of open tickets",
+					"default": "0",
+					"insert_after": "fab_digest_section",
+				},
+				{
+					"fieldname": "fab_digest_hour",
+					"fieldtype": "Int",
+					"label": "Send at (Hour)",
+					"default": "8",
+					"insert_after": "fab_digest_enabled",
+					"depends_on": "fab_digest_enabled",
+					"mandatory_depends_on": "eval: doc.fab_digest_enabled",
+					"description": "Hour of the agent's own working day, 0 to 23. Weekdays only.",
+				},
+			],
+			"HD Agent": [
+				{
+					"fieldname": "fab_digest_sent_on",
+					"fieldtype": "Date",
+					"label": "Digest sent on",
+					"insert_after": "availability_changed_on",
+					"hidden": 1,
+					"read_only": 1,
+					"no_copy": 1,
+				}
+			],
+		},
+		ignore_validate=True,
+	)
+	seed_digest_defaults()
+
+
+# Same reason as seed_inactivity_defaults: a Single's custom field default never
+# materialises, so the hour has to be written once for the feature to have a sane
+# morning the day it is switched on.
+DIGEST_DEFAULTS = {
+	"fab_digest_hour": "8",
+}
+
+
+def seed_digest_defaults():
+	stored = frappe.db.get_singles_dict("HD Settings")
+	for field, value in DIGEST_DEFAULTS.items():
 		if field not in stored:
 			frappe.db.set_single_value("HD Settings", field, value)
 

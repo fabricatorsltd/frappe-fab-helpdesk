@@ -1089,3 +1089,68 @@ msgstr "Aiuto immediato ed eccellente"
 
 msgid "Exceptional support experience"
 msgstr "Esperienza di supporto eccezionale"
+
+# Agent open ticket digest
+
+msgid "Daily agent digest"
+msgstr "Riepilogo giornaliero per gli agenti"
+
+msgid "Send agents a daily digest of open tickets"
+msgstr "Invia agli agenti un riepilogo giornaliero dei ticket aperti"
+
+msgid "Send at (Hour)"
+msgstr "Invia alle (ora)"
+
+msgid "Hour of the agent's own working day, 0 to 23. Weekdays only."
+msgstr "Ora della giornata lavorativa dell'agente, da 0 a 23. Solo nei giorni feriali."
+
+msgid "Digest sent on"
+msgstr "Riepilogo inviato il"
+
+msgid "Daily digest of open tickets"
+msgstr "Riepilogo giornaliero dei ticket aperti"
+
+msgid "Email every agent the tickets still open, on weekday mornings in their own timezone."
+msgstr "Invia a ogni agente i ticket ancora aperti, nei giorni feriali al mattino secondo il suo fuso orario."
+
+msgid "The hour must be between 0 and 23"
+msgstr "L'ora deve essere compresa tra 0 e 23"
+
+msgid "The digest hour must be between 0 and 23"
+msgstr "L'ora del riepilogo deve essere compresa tra 0 e 23"
+
+msgid "[Open tickets] {0}"
+msgstr "[Ticket aperti] {0}"
+
+msgid "Here are the tickets still open this morning."
+msgstr "Ecco i ticket ancora aperti questa mattina."
+
+msgid "Assigned to me"
+msgstr "Assegnati a me"
+
+msgid "The others"
+msgstr "Gli altri"
+
+msgid "Nothing is assigned to you right now."
+msgstr "Al momento non hai ticket assegnati."
+
+msgid "Nothing else is open right now."
+msgstr "Al momento non c'è altro di aperto."
+
+msgid "Open for"
+msgstr "Aperto da"
+
+msgid "1 day"
+msgstr "1 giorno"
+
+msgid "{0} days"
+msgstr "{0} giorni"
+
+msgid "less than an hour"
+msgstr "meno di un'ora"
+
+msgid "1 hour"
+msgstr "1 ora"
+
+msgid "{0} hours"
+msgstr "{0} ore"
