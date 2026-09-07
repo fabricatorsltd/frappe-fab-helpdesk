@@ -1154,3 +1154,12 @@ msgstr "1 ora"
 
 msgid "{0} hours"
 msgstr "{0} ore"
+
+msgid "Ticket not found."
+msgstr "Ticket non trovato."
+
+msgid "ticket"
+msgstr "ticket"
+
+msgid "tickets"
+msgstr "ticket"
