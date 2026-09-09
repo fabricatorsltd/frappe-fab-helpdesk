@@ -1140,3 +1140,11 @@ msgstr "1 hora"
 
 msgid "{0} hours"
 msgstr "{0} horas"
+
+# Ticket info unsaved changes
+
+msgid "You have unsaved changes in Ticket Info. Leave anyway?"
+msgstr "Hay cambios sin guardar en Ticket Info. ¿Salir de todos modos?"
+
+msgid "Failed to save ticket info."
+msgstr "No se ha podido guardar Ticket Info."
