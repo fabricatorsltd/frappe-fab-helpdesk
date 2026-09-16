@@ -155,9 +155,6 @@ msgstr "Inserisci un oggetto per continuare"
 msgid "Detailed explanation"
 msgstr "Spiegazione dettagliata"
 
-msgid "Submit"
-msgstr "Invia"
-
 msgid "Discard"
 msgstr "Scarta"
 
