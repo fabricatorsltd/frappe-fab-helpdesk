@@ -939,9 +939,6 @@ msgctxt "Button in web form"
 msgid "Save"
 msgstr "Invia"
 
-msgid "Submitted"
-msgstr "Inviato"
-
 msgid "Thank you for spending your valuable time to fill this form"
 msgstr "Grazie per aver dedicato il tuo tempo a compilare questo modulo."
 
